@@ -153,6 +153,7 @@ namespace War_Game
                                 }
                             }
 
+                            P1Deck.Shuffled();
                             Player P1 = new Player(nickNamePlayer1, P1Deck);
                             Console.Clear();
 
@@ -164,78 +165,99 @@ namespace War_Game
 
                             Console.Clear();
 
+                            validator = false;
 
-                            while (P2Deck.cards.Count() < (12 + 1))
+                            while (!validator)
                             {
-                                int deckMenuIndex = deckMenu.Run();
 
-                                switch (deckMenuIndex)
+                                while (P2Deck.cards.Count() < (12))
                                 {
-                                    case 0:
-                                        P2Deck.cards.Add(Zeus);
-                                        break;
+                                    int deckMenuIndex = deckMenu.Run();
 
-                                    case 1:
-                                        P2Deck.cards.Add(Hermes);
-                                        break;
+                                    switch (deckMenuIndex)
+                                    {
+                                        case 0:
+                                            P2Deck.cards.Add(Zeus);
+                                            break;
 
-                                    case 2:
-                                        P2Deck.cards.Add(Hera);
-                                        break;
+                                        case 1:
+                                            P2Deck.cards.Add(Hermes);
+                                            break;
 
-                                    case 3:
-                                        P2Deck.cards.Add(Apolo);
-                                        break;
+                                        case 2:
+                                            P2Deck.cards.Add(Hera);
+                                            break;
 
-                                    case 4:
-                                        P2Deck.cards.Add(Poseidon);
-                                        break;
+                                        case 3:
+                                            P2Deck.cards.Add(Apolo);
+                                            break;
 
-                                    case 5:
-                                        P2Deck.cards.Add(Artemisa);
-                                        break;
+                                        case 4:
+                                            P2Deck.cards.Add(Poseidon);
+                                            break;
 
-                                    case 6:
-                                        P2Deck.cards.Add(Afrodita);
-                                        break;
+                                        case 5:
+                                            P2Deck.cards.Add(Artemisa);
+                                            break;
 
-                                    case 7:
-                                        P2Deck.cards.Add(Hefesto);
-                                        break;
+                                        case 6:
+                                            P2Deck.cards.Add(Afrodita);
+                                            break;
 
-                                    case 8:
-                                        P2Deck.cards.Add(Ares);
-                                        break;
+                                        case 7:
+                                            P2Deck.cards.Add(Hefesto);
+                                            break;
 
-                                    case 9:
-                                        P2Deck.cards.Add(Demeter);
-                                        break;
+                                        case 8:
+                                            P2Deck.cards.Add(Ares);
+                                            break;
 
-                                    case 10:
-                                        P2Deck.cards.Add(Atenea);
-                                        break;
+                                        case 9:
+                                            P2Deck.cards.Add(Demeter);
+                                            break;
 
-                                    case 11:
-                                        P2Deck.cards.Add(Hestia);
-                                        break;
+                                        case 10:
+                                            P2Deck.cards.Add(Atenea);
+                                            break;
 
-                                    case 12:
-                                        P2Deck.cards.Add(Dioniso);
-                                        break;
+                                        case 11:
+                                            P2Deck.cards.Add(Hestia);
+                                            break;
 
-                                    case 13:
-                                        P2Deck.cards.Add(Hades);
-                                        break;
+                                        case 12:
+                                            P2Deck.cards.Add(Dioniso);
+                                            break;
+
+                                        case 13:
+                                            P2Deck.cards.Add(Hades);
+                                            break;
+                                    }
+                                }
+
+                                if (P2Deck.Validator())
+                                {
+                                    validator = true;
+                                }
+                                if (!P2Deck.Validator())
+                                {
+                                    Console.Clear();
+                                    P2Deck.cards.Clear();
+                                    Console.WriteLine("Your deck have not the correct format, please make sure you have 12 cards, no more no less, and you don't have any card twice.");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                             }
+                            P2Deck.Shuffled();
                             Player P2 = new Player(nickNamePlayer2, P2Deck);
 
                             int turn = 1;
                             string cont1nue = "";
 
+
                             while (turn <= 6)
                             {
                                 Console.Clear();
+                                Console.WriteLine($"TURN: {turn}");
                                 ConsoleApp.PrintBoard(P1, P2);
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -245,12 +267,12 @@ namespace War_Game
 
                                 while (!P1.EndTurn)
                                 {
-                                    ConsoleApp.ItsYourTurn(P1);
+                                    ConsoleApp.ItsYourTurn(P1, P2);
                                     P1.DrawACard();
                                 }
                                 while (!P2.EndTurn)
                                 {
-                                    ConsoleApp.ItsYourTurn(P2);
+                                    ConsoleApp.ItsYourTurn(P2, P1);
                                     P2.DrawACard();
                                 }
 

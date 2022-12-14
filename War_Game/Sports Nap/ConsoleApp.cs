@@ -14,7 +14,7 @@ namespace War_Game
         {
             Console.Clear();
             int i = 1;
-            Console.WriteLine("Player 1: " + one1.NickName);
+            Console.WriteLine("Player 1: " + one1.NickName + " ENERGY => " + one1.Energy + " <= ");
             Console.WriteLine("========================================================");
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             foreach (Card card in one1.CardsInHand)
@@ -68,7 +68,7 @@ namespace War_Game
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
 
-            Console.WriteLine("Player 2: " + two2.NickName);
+            Console.WriteLine("Player 2: " + two2.NickName  + " ENERGY => " + two2.Energy + " <= ");
         }
 
         public static void PrintCard(Card card)
@@ -111,11 +111,11 @@ namespace War_Game
             }
         }
 
-        public static void ItsYourTurn(Player P)
+        public static void ItsYourTurn(Player P, Player X)
         {
 
             string newPrompt = "It's ur turn " + P.NickName + "\n What whould you want to do?";
-            string[] playOptions = { "Play a card", "End Turn" };
+            string[] playOptions = { "Play a card", "Check GameBoard", "End Turn" };
             Menu playManu = new Menu(newPrompt, playOptions);
             int selectedPlayIndex = playManu.Run();
 
@@ -134,11 +134,15 @@ namespace War_Game
                     break;
 
                 case 1:
+                    PrintBoard(P, X);
+                    break;
+
+                case 2:
                     P.EndTurn = true;
                     Console.Clear();
                     break;
             }
-           
+
         }
 
         static void PlayACardPrinter(Player P)

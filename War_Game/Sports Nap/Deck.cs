@@ -26,7 +26,7 @@ namespace War_Game
             return true;
         }
 
-        public static List<Card> Shuffled (List<Card> cards)
+        public List<Card> Shuffled ()
         {
             Random rand = new Random();
             List<Card> list = new List<Card>();

@@ -70,68 +70,86 @@ namespace War_Game
                             Card Hades = new Card("Hades", 6, 10, Elefecto);
 
                             Menu deckMenu = new Menu(newPromptDeck, cards);
+                            bool validator = false;
 
-                            while (P1Deck.cards.Count() < (12 + 1))
+                            while (!validator)
                             {
-                                int deckMenuIndex = deckMenu.Run();
 
-                                switch (deckMenuIndex)
+                                while (P1Deck.cards.Count() < (12))
                                 {
-                                    case 0:
-                                        P1Deck.cards.Add(Zeus);
-                                        break;
+                                    int deckMenuIndex = deckMenu.Run();
 
-                                    case 1:
-                                        P1Deck.cards.Add(Hermes);
-                                        break;
+                                    switch (deckMenuIndex)
+                                    {
+                                        case 0:
+                                            P1Deck.cards.Add(Zeus);
+                                            break;
 
-                                    case 2:
-                                        P1Deck.cards.Add(Hera);
-                                        break;
+                                        case 1:
+                                            P1Deck.cards.Add(Hermes);
+                                            break;
 
-                                    case 3:
-                                        P1Deck.cards.Add(Apolo);
-                                        break;
+                                        case 2:
+                                            P1Deck.cards.Add(Hera);
+                                            break;
 
-                                    case 4:
-                                        P1Deck.cards.Add(Poseidon);
-                                        break;
+                                        case 3:
+                                            P1Deck.cards.Add(Apolo);
+                                            break;
 
-                                    case 5:
-                                        P1Deck.cards.Add(Artemisa);
-                                        break;
+                                        case 4:
+                                            P1Deck.cards.Add(Poseidon);
+                                            break;
 
-                                    case 6:
-                                        P1Deck.cards.Add(Afrodita);
-                                        break;
+                                        case 5:
+                                            P1Deck.cards.Add(Artemisa);
+                                            break;
 
-                                    case 7:
-                                        P1Deck.cards.Add(Hefesto);
-                                        break;
+                                        case 6:
+                                            P1Deck.cards.Add(Afrodita);
+                                            break;
 
-                                    case 8:
-                                        P1Deck.cards.Add(Ares);
-                                        break;
+                                        case 7:
+                                            P1Deck.cards.Add(Hefesto);
+                                            break;
 
-                                    case 9:
-                                        P1Deck.cards.Add(Demeter);
-                                        break;
+                                        case 8:
+                                            P1Deck.cards.Add(Ares);
+                                            break;
 
-                                    case 10:
-                                        P1Deck.cards.Add(Atenea);
-                                        break;
+                                        case 9:
+                                            P1Deck.cards.Add(Demeter);
+                                            break;
 
-                                    case 11:
-                                        P1Deck.cards.Add(Hestia);
-                                        break;
+                                        case 10:
+                                            P1Deck.cards.Add(Atenea);
+                                            break;
 
-                                    case 12:
-                                        P1Deck.cards.Add(Dioniso);
-                                        break;
+                                        case 11:
+                                            P1Deck.cards.Add(Hestia);
+                                            break;
 
-                                    case 13:
-                                        P1Deck.cards.Add(Hades);
-                                        break;
+                                        case 12:
+                                            P1Deck.cards.Add(Dioniso);
+                                            break;
+
+                                        case 13:
+                                            P1Deck.cards.Add(Hades);
+                                            break;
+                                    }
+                                }
+
+                                if (P1Deck.Validator())
+                                {
+                                    validator = true;
+                                }
+                                if (!P1Deck.Validator())
+                                {
+                                    Console.Clear();
+                                    P1Deck.cards.Clear();
+                                    Console.WriteLine("Your deck have not the correct format, please make sure you have 12 cards, no more no less, and you don't have any card twice.");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                             }
 

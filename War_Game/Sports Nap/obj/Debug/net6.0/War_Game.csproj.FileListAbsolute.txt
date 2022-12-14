@@ -22,3 +22,15 @@ E:\Programming\Proyectos Personales\Clases Dayron\War_Game\Sports Nap\bin\Debug\
 E:\Programming\Proyectos Personales\Clases Dayron\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.dll
 E:\Programming\Proyectos Personales\Clases Dayron\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.pdb
 E:\Programming\Proyectos Personales\Clases Dayron\War_Game\Sports Nap\obj\Debug\net6.0\ref\War_Game.dll
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.deps.json
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.dll
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.pdb
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.csproj.AssemblyReference.cache
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.AssemblyInfoInputs.cache
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.AssemblyInfo.cs
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.csproj.CoreCompileInputs.cache
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.dll
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\refint\War_Game.dll
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.pdb
+E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\ref\War_Game.dll

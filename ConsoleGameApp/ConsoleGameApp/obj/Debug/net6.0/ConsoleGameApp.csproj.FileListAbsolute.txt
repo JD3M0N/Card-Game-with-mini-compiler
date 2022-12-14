@@ -16,3 +16,21 @@ E:\Programming\Proyectos Personales\Clases Dayron\ConsoleGameApp\ConsoleGameApp\
 E:\Programming\Proyectos Personales\Clases Dayron\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.pdb
 E:\Programming\Proyectos Personales\Clases Dayron\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.genruntimeconfig.cache
 E:\Programming\Proyectos Personales\Clases Dayron\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ref\ConsoleGameApp.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\ConsoleGameApp.exe
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\ConsoleGameApp.deps.json
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\ConsoleGameApp.runtimeconfig.json
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\ConsoleGameApp.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\ConsoleGameApp.pdb
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\War_Game.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\War_Game.pdb
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.csproj.AssemblyReference.cache
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.AssemblyInfoInputs.cache
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.AssemblyInfo.cs
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.csproj.CoreCompileInputs.cache
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.csproj.CopyComplete
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\refint\ConsoleGameApp.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.pdb
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.genruntimeconfig.cache
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ref\ConsoleGameApp.dll

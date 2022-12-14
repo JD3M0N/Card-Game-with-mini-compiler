@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ConsoleGameApp/1.0.0": {
+        "dependencies": {
+          "War_Game": "1.0.0"
+        },
+        "runtime": {
+          "ConsoleGameApp.dll": {}
+        }
+      },
+      "War_Game/1.0.0": {
+        "runtime": {
+          "War_Game.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleGameApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "War_Game/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

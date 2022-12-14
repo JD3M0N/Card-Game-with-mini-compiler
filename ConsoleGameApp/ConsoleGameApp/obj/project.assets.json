@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "War_Game/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/War_Game.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/War_Game.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "War_Game/1.0.0": {
+      "type": "project",
+      "path": "../../War_Game/Sports Nap/War_Game.csproj",
+      "msbuildProject": "../../War_Game/Sports Nap/War_Game.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "War_Game >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Josue\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
-      "projectName": "War_Game",
-      "projectPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
+      "projectUniqueName": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
+      "projectName": "ConsoleGameApp",
+      "projectPath": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
       "packagesPath": "C:\\Users\\Josue\\.nuget\\packages\\",
-      "outputPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\obj\\",
+      "outputPath": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\ConsoleGameApp\\ConsoleGameApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\War_Game.csproj": {
+              "projectPath": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\War_Game.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

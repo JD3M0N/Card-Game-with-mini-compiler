@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\War_Game.csproj": {}
+    "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {}
   },
   "projects": {
-    "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\War_Game.csproj": {
+    "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\War_Game.csproj",
+        "projectUniqueName": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
         "projectName": "War_Game",
-        "projectPath": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\War_Game.csproj",
+        "projectPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
         "packagesPath": "C:\\Users\\Josue\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\Proyectos Personales\\Clases Dayron\\War_Game\\Sports Nap\\obj\\",
+        "outputPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Josue\\AppData\\Roaming\\NuGet\\NuGet.Config",

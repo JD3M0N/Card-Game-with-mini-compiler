@@ -16,6 +16,7 @@ namespace War_Game
             int i = 1;
             Console.WriteLine("Player 1: " + one1.NickName);
             Console.WriteLine("========================================================");
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             foreach (Card card in one1.CardsInHand)
             {
                 Console.Write("#" + i + ":");
@@ -24,21 +25,26 @@ namespace War_Game
                 Console.WriteLine();
                 i++;
             }
-            Console.WriteLine();
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
+            Console.WriteLine("========================================================");
             for (int j = 0; j < 3; j++)
             {
+                Console.WriteLine($"==>>TERRAIN{j+1}<<==");
                 Console.WriteLine("========================================================");
 
-                Console.WriteLine("Terrain " + (j + 1) + " :" + one1.NickName + " => Conquest: " + one1.Terrains[j].Conquest);
+                Console.WriteLine(one1.NickName + " => Conquest: " + one1.Terrains[j].Conquest);
                 Console.WriteLine();
                 PrintTerrain(one1.Terrains[j]);
 
+                Console.WriteLine();
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine();
 
-                Console.WriteLine("Terrain " + (j + 1) + " :" + two2.NickName + " => Conquest: " + two2.Terrains[j].Conquest);
+                Console.WriteLine(two2.NickName + " => Conquest: " + two2.Terrains[j].Conquest);
                 Console.WriteLine();
                 PrintTerrain(two2.Terrains[j]);
 
@@ -48,6 +54,7 @@ namespace War_Game
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("========================================================");
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
 
             i = 1;
             foreach (Card card in two2.CardsInHand)
@@ -58,6 +65,7 @@ namespace War_Game
                 Console.WriteLine();
                 i++;
             }
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
 
             Console.WriteLine("Player 2: " + two2.NickName);
@@ -130,35 +138,7 @@ namespace War_Game
                     Console.Clear();
                     break;
             }
-            /*int imput = 0;
-
-            Console.WriteLine("Its your turn: " + P.NickName);
-            Console.WriteLine("What do u want to do?");
-            Console.WriteLine("Write 1: Play a Card.");
-            Console.WriteLine("Write 2: End Turn.");
-            Console.WriteLine();
-            Console.WriteLine();*/
-/*
-            imput = int.Parse(Console.ReadLine());
-
-            if (imput == 1)
-            {
-                string finish = "";
-                while (finish != "y")
-                {
-                    PlayACardPrinter(P);
-                    Console.WriteLine("Are u finish?");
-                    Console.WriteLine("Write 'y' for finish and 'n' to play another card.");
-                    finish = Console.ReadLine();
-                }
-                Console.Clear();
-            }
-            if (imput == 2)
-            {
-                P.EndTurn = true;
-                Console.Clear();
-            }
-*/
+           
         }
 
         static void PlayACardPrinter(Player P)

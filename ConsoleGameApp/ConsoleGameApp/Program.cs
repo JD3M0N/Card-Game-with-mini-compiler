@@ -7,7 +7,6 @@ namespace War_Game
 {
     public class Main_Game
     {
-        // esto es una prueba asdsss
         static void Main(string[] args)
         {
             string prompt = @"

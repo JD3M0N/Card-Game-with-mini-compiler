@@ -70,11 +70,10 @@ namespace War_Game
                             Card Hades = new Card("Hades", 6, 10, Elefecto);
 
                             Menu deckMenu = new Menu(newPromptDeck, cards);
-                            int deckMenuIndex = deckMenu.Run();
 
                             while (P1Deck.cards.Count() < (12 + 1))
                             {
-                                deckMenuIndex = deckMenu.Run();
+                                int deckMenuIndex = deckMenu.Run();
 
                                 switch (deckMenuIndex)
                                 {
@@ -147,11 +146,11 @@ namespace War_Game
 
                             Console.Clear();
 
-                            deckMenuIndex = deckMenu.Run();
 
                             while (P2Deck.cards.Count() < (12 + 1))
                             {
-                                deckMenuIndex = deckMenu.Run();
+                                int deckMenuIndex = deckMenu.Run();
+
                                 switch (deckMenuIndex)
                                 {
                                     case 0:
@@ -273,19 +272,6 @@ namespace War_Game
                     Menu.ExitGame();
                     break;
             }
-
-
-
-            //ConsoleApp.Loading();
-
-
-            // deck3 = (Deck)deck1.Clone();
-            //deck1.cards = Deck.Shuffled(deck1.cards);
-            //Player P1 = new Player(nickNamePlayer1, deck1);
-
-            //  deck2.cards = Deck.Shuffled(deck2.cards);
-            //  Player P2 = new Player(nickNamePlayer2, deck3);
-
 
 
             void PlayACard(Player player, Card cardPlayed, int indexTerrain)

@@ -6,8 +6,30 @@ using System.Threading.Tasks;
 
 namespace War_Game
 {
-    internal class Bot_easy : Player
+    public class Bot_easy : Player
     {
+        public Bot_easy(string botName, Deck botDeck)
+        {
+            this.NickName = botName;
+            this.PlayerDeck = botDeck;
+            CardsInHand = new List<Card>();
+            Energy = 1;
+
+            for (int i = 0; i < 3; i++)
+            {
+                DrawACard();
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                Terrains[i] = new Terrain();
+            }
+        }
+
+        public Bot_easy()
+        {
+
+        }
         Random random = new Random();
 
         public int TerrainToPlay(Player player)
@@ -56,7 +78,16 @@ namespace War_Game
                 }
             }
 
-            return card;
+            if (card.Energy != null)
+            {
+                return card;
+
+            }
+            else
+            {
+                EndTurn = true;
+                return null;
+            }
         }
 
     }

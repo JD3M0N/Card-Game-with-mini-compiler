@@ -64,6 +64,9 @@ namespace War_Game
                 Console.Clear();
                 ConsoleApp.PrintBoard(P1, P2);
 
+                P1.Energy = turn;
+                P2.Energy = turn;
+
                 while (!P1.EndTurn)
                 {
 

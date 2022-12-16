@@ -62,15 +62,17 @@ namespace War_Game
         {
             Card card = new Card();
 
+            foreach (Card _card in CardsInHand)
+            {
+                if (_card.Energy <= Energy)
+                {
+                    card = _card;
+                    break;
+                }
+            }
+             
             foreach (Card card_ in CardsInHand)
             {
-                while (card.Energy == null)
-                {
-                    if (Energy <= card_.Energy)
-                    {
-                        card = card_;
-                    }
-                }
 
                 if (card.Energy <= card_.Energy && card.Energy <= Energy && card_.Energy <= Energy && card.Conquest < card_.Conquest)
                 {
@@ -78,7 +80,7 @@ namespace War_Game
                 }
             }
 
-            if (card.Energy != null)
+            if (card.cardName != null)
             {
                 return card;
 

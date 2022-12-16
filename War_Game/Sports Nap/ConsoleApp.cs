@@ -179,6 +179,7 @@ namespace War_Game
             player.Terrains[indexTerrain].CardsPlayed.Add(cardPlayed);
             player.Terrains[indexTerrain].Conquest += cardPlayed.Conquest;
             player.CardsInHand.Remove(cardPlayed);
+            player.Energy = player.Energy - cardPlayed.Energy;
         }
     }
 }

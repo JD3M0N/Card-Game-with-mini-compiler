@@ -308,17 +308,17 @@ namespace War_Game
                                 while (!P1.EndTurn)
                                 {
                                     ConsoleApp.ItsYourTurn(P1, P2);
-                                    P1.DrawACard();
                                 }
                                 while (!P2.EndTurn)
                                 {
                                     ConsoleApp.ItsYourTurn(P2, P1);
-                                    P2.DrawACard();
                                 }
 
                                 P1.EndTurn = false;
                                 P2.EndTurn = false;
 
+                                    P1.DrawACard();
+                                    P2.DrawACard();
 
                                 turn++;
                             }
@@ -370,7 +370,6 @@ namespace War_Game
                                 while (!P3.EndTurn)
                                 {
                                     ConsoleApp.ItsYourTurn(P3, DiazcaBot);
-                                    P3.DrawACard();
                                 }
                                 while (!DiazcaBot.EndTurn)
                                 {
@@ -381,12 +380,13 @@ namespace War_Game
                                     {
                                         ConsoleApp.PlayACard(DiazcaBot, tempCard, DiazcaBot.TerrainToPlay(P3));
                                     }
-                                    DiazcaBot.DrawACard();
                                 }
 
                                 P3.EndTurn = false;
                                 DiazcaBot.EndTurn = false;
 
+                                    P3.DrawACard();
+                                    DiazcaBot.DrawACard();
 
                                 turn++;
                             }

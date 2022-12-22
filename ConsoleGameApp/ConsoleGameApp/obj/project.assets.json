@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gabriel\\.nuget\\packages\\": {}
+    "C:\\Users\\Josue\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
+      "projectUniqueName": "E:\\Programming\\GitDesktop\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
       "projectName": "ConsoleGameApp",
-      "projectPath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
-      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\obj\\",
+      "projectPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
+      "packagesPath": "C:\\Users\\Josue\\.nuget\\packages\\",
+      "outputPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {
-              "projectPath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj"
+            "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {
+              "projectPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj"
             }
           }
         }

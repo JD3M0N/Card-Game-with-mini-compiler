@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "99492655-a387-4994-8e6b-1c64c1fde08b": {
+      "ProjectGuid": "99492655-a387-4994-8e6b-1c64c1fde08b",
+      "DisplayName": "War_Game",
+      "ColorIndex": 0
+    },
+    "3aecf68c-f271-4728-846a-0599cb82f714": {
+      "ProjectGuid": "3aecf68c-f271-4728-846a-0599cb82f714",
+      "DisplayName": "ConsoleGameApp",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

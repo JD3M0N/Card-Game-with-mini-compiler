@@ -7,7 +7,6 @@ using System.Media;
 
 namespace War_Game
 {
-    //asd
     public class ConsoleApp
     {
         public static void PrintBoard(Player one1, Player two2)

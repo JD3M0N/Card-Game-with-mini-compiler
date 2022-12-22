@@ -48,3 +48,4 @@ ConsoleGameApp/ConsoleGameApp/bin/Debug/net6.0/ConsoleGameApp.pdb
 ConsoleGameApp/ConsoleGameApp/bin/Debug/net6.0/ConsoleGameApp.dll
 ConsoleGameApp/.vs/ConsoleGameApp/v17/.suo
 ConsoleGameApp/.vs/ConsoleGameApp/v17/.futdcache.v1
+*.cache

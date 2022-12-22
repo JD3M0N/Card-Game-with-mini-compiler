@@ -296,6 +296,9 @@ namespace War_Game
                                 P1.Energy = turn;
                                 P2.Energy = turn;
 
+                                P1.UpdatePublicTerrain();
+                                P2.UpdatePublicTerrain();
+
                                 Console.Clear();
                                 Console.WriteLine($"TURN: {turn}");
                                 ConsoleApp.PrintBoard(P1, P2);
@@ -359,6 +362,9 @@ namespace War_Game
                             {
                                 P3.Energy = turn;
                                 DiazcaBot.Energy = turn;
+
+                                P3.UpdatePublicTerrain();
+                                DiazcaBot.UpdatePublicTerrain();
 
                                 Console.Clear();
                                 Console.WriteLine($"TURN: {turn}");

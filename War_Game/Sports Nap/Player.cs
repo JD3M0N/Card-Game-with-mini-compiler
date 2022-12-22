@@ -14,6 +14,7 @@ namespace War_Game
         public int Energy;
         public bool EndTurn = false;
         public Terrain [] Terrains = new Terrain [3];
+        public Terrain [] PublicTerrain = new Terrain [3];
 
         public Player ()
         {
@@ -60,6 +61,13 @@ namespace War_Game
             PlayerDeck.cards.Remove(PlayerDeck.cards.Last());
         }
 
+        public void UpdatePublicTerrain ()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                PublicTerrain[i] = Terrains[i];
+            }
+        }
     }
 }
 

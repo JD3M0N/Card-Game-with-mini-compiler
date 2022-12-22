@@ -122,7 +122,7 @@ namespace War_Game
             switch (selectedPlayIndex)
             {
                 case 0:
-                    if(P.CardsInHand.Count > 0 && P.Energy > 0)
+                    if (P.CardsInHand.Count > 0 && P.Energy > 0)
                     {
                         string finish = "";
                         while (finish != "y")
@@ -137,21 +137,21 @@ namespace War_Game
                     }
                     else
                     {
-                        if(P.CardsInHand.Count == 0)
+                        if (P.CardsInHand.Count == 0)
                         {
                             string WhatToDo = "";
                             Console.WriteLine("You don't have any card to play");
                             Console.WriteLine("Write 'et' to end turn or press any key to go back");
                             WhatToDo = Console.ReadLine();
 
-                            if(WhatToDo == "et")
+                            if (WhatToDo == "et")
                             {
                                 P.EndTurn = true;
                                 break;
                             }
                             break;
                         }
-                        if(P.Energy == 0)
+                        if (P.Energy == 0)
                         {
                             string WhatToDo = "";
                             Console.WriteLine("You don't have enough energy to play a card");
@@ -170,12 +170,12 @@ namespace War_Game
 
                 case 1:
                     string GoBack = "";
-                    while(GoBack != "gb")
+                    while (GoBack != "gb")
                     {
                         PrintBoard(P, X);
                         Console.WriteLine("If you want to go back write 'gb'.");
                         GoBack = Console.ReadLine();
-                    }                    
+                    }
                     break;
 
                 case 2:
@@ -210,14 +210,24 @@ namespace War_Game
             int imputTerrain = 0;
             int imputCard = 0;
             Console.WriteLine("Write the number of the card that u want to play: ");
-            imputCard = int.Parse(Console.ReadLine()) - 1;
+            bool flag = false;
+            while (!flag)
+            {
+                imputCard = int.Parse(Console.ReadLine()) - 1;  // poner exepcion al enter
+                flag = true;
+                if (imputCard <= - 1 || imputCard > P.CardsInHand.Count() - 1)
+                {
+                    Console.WriteLine("Sorry, that number isn't valid, try again");
+                    flag = false;
+                }
+            }
 
-            if(Card.CardCanBePlayed(P, P.CardsInHand[imputCard]))
+            if (Card.CardCanBePlayed(P, P.CardsInHand[imputCard]))
             {
                 Console.WriteLine("Write in what terrain u want to play?: ");
                 imputTerrain = int.Parse(Console.ReadLine()) - 1;
 
-                while(!Terrain.TerrainHaveSpace(P.Terrains[imputTerrain]))
+                while (!Terrain.TerrainHaveSpace(P.Terrains[imputTerrain]))
                 {
                     Console.WriteLine("You have already played 4 cards in Terrain #" + (imputTerrain + 1));
                     Console.WriteLine("Choose another terrain to play your card");

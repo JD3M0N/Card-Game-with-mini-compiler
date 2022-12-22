@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace War_Game
 {
-    public class Deck : ICloneable
+    public class Deck
     {
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
         public string DeckName;
         public List<Card> cards = new List<Card>();
 
@@ -31,7 +26,7 @@ namespace War_Game
             return true;
         }
 
-        public static List<Card> Shuffled (List<Card> cards)
+        public List<Card> Shuffled ()
         {
             Random rand = new Random();
             List<Card> list = new List<Card>();
@@ -48,6 +43,27 @@ namespace War_Game
             }
 
             return list;
+        }
+
+        public bool Validator ()
+        {
+            if (this.cards.Count != 12)
+            {
+                return false;
+            }
+
+            List<Card> Templist = new List<Card>();
+
+            foreach (Card card in this.cards)
+            {
+                if (Templist.Contains(card))
+                {
+                    return false;
+                }
+                Templist.Add(card);
+            }
+
+            return true;
         }
     }
 }

@@ -13,23 +13,11 @@ namespace War_Game
         public static void PrintBoard(Player one1, Player two2)
         {
             Console.Clear();
-            int i = 1;
             Console.WriteLine("Player 1: " + one1.NickName + " ENERGY => " + one1.Energy + " <= ");
+
+            Console.WriteLine("========================================================");
             Console.WriteLine("========================================================");
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-            foreach (Card card in one1.CardsInHand)
-            {
-                Console.Write("#" + i + ":");
-                PrintCard(card);
-                Console.Write("  ||  ");
-                Console.WriteLine();
-                i++;
-            }
-            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-            Console.WriteLine("========================================================");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
             Console.WriteLine("========================================================");
             for (int j = 0; j < 3; j++)
             {
@@ -44,28 +32,14 @@ namespace War_Game
                 Console.WriteLine("--------------------------------------------------------");
                 Console.WriteLine();
 
-                Console.WriteLine(two2.NickName + " => Conquest: " + two2.Terrains[j].Conquest);
+                Console.WriteLine(two2.NickName + " => Conquest: " + two2.PublicTerrain[j].Conquest);
                 Console.WriteLine();
-                PrintTerrain(two2.Terrains[j]);
+                PrintTerrain(two2.PublicTerrain[j]);
 
                 Console.WriteLine("========================================================");
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
-            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-
-            i = 1;
-            foreach (Card card in two2.CardsInHand)
-            {
-                Console.Write("#" + i + ":");
-                PrintCard(card);
-                Console.Write("  ||  ");
-                Console.WriteLine();
-                i++;
-            }
-            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
 
             Console.WriteLine("Player 2: " + two2.NickName  + " ENERGY => " + two2.Energy + " <= ");

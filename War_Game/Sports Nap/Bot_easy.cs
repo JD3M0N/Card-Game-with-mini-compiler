@@ -23,6 +23,7 @@ namespace War_Game
             for (int i = 0; i < 3; i++)
             {
                 Terrains[i] = new Terrain();
+                PublicTerrain[i] = new Terrain();
             }
         }
 

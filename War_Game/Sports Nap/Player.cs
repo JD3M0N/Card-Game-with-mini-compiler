@@ -36,6 +36,7 @@ namespace War_Game
             for (int i = 0; i < 3; i++)
             {
                 Terrains[i] = new Terrain();
+                PublicTerrain[i] = new Terrain();
             }
         }
         public string nickName
@@ -65,7 +66,12 @@ namespace War_Game
         {
             for (int i = 0; i < 3; i++)
             {
-                PublicTerrain[i] = Terrains[i];
+                PublicTerrain[i].Conquest = Terrains[i].Conquest;
+
+                foreach(Card c in Terrains[i].CardsPlayed)
+                {
+                    PublicTerrain[i].CardsPlayed.Add(c);
+                }
             }
         }
     }

@@ -35,6 +35,15 @@ namespace War_Game
             }
         }
 
+        public static bool TerrainHaveSpace(Terrain t)
+        {
+            if(t.CardsPlayed.Count < 4)
+            {
+                return true;
+            }
+            return false;
+        }
+
         // crear terreno solo con nombre y efecto
     }
 }

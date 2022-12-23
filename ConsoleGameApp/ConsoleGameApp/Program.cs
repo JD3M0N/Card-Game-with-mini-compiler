@@ -346,7 +346,7 @@ namespace War_Game
                             BotDeck.Shuffled();
                             Bot_easy DiazcaBot = new Bot_easy("DiazcaBot", BotDeck);
 
-                            ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 0);  // (C-APK)
+                            ConsoleApp.PrintAnimation("Insert nick name Player : ", 0);  // (C-APK)
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 0);  // (C-APK)
                             nickNamePlayer1 = Console.ReadLine();           //Console APK (C-APK)
 

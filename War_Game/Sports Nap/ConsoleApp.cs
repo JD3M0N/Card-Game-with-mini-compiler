@@ -13,18 +13,34 @@ namespace War_Game
         public static void PrintBoard(Player one1, Player two2)
         {
             Console.Clear();
-            Console.WriteLine("Player 1: " + one1.NickName + " ENERGY => " + one1.Energy + " <= ");
+            Console.Write("Player 1: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(one1.NickName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy => ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(one1.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(" <= ");
 
             Console.WriteLine("========================================================");
             Console.WriteLine("========================================================");
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("========================================================");
             for (int j = 0; j < 3; j++)
             {
                 Console.WriteLine($"==>>TERRAIN{j+1}<<==");
                 Console.WriteLine("========================================================");
+                Console.ForegroundColor = ConsoleColor.Gray;
 
-                Console.WriteLine(one1.NickName + " => Conquest: " + one1.Terrains[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(one1.NickName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write(" => Conquest: ");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine(one1.Terrains[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
                 PrintTerrain(one1.Terrains[j]);
 
@@ -32,22 +48,48 @@ namespace War_Game
                 Console.WriteLine("--------------------------------------------------------");
                 Console.WriteLine();
 
-                Console.WriteLine(two2.NickName + " => Conquest: " + two2.PublicTerrain[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write(two2.NickName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write(" => Conquest: ");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine(two2.PublicTerrain[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
                 PrintTerrain(two2.PublicTerrain[j]);
 
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("========================================================");
             }
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
             Console.WriteLine("========================================================");
 
-            Console.WriteLine("Player 2: " + two2.NickName  + " ENERGY => " + two2.Energy + " <= ");
+            Console.Write("Player 2: ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write(two2.NickName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy => ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(two2.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(" <= ");
         }
 
         public static void PrintCard(Card card)
         {
-            Console.Write("Name: " + card.cardName + " Energy Cost: " + card.Energy + " Conquest Power: " + card.Conquest);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(card.cardName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy Cost: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(card.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Conquest Power: ");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write(card.Conquest);
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         public static void PrintTerrain(Terrain x)
@@ -56,7 +98,7 @@ namespace War_Game
 
             foreach (Card card in x.CardsPlayed)
             {
-                Console.Write(i + " :");
+                Console.Write(i + ": ");
                 PrintCard(card);
                 Console.WriteLine();
                 i++;

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9xZS4Tdm43MzxjzT3aAMh0/JXYee5lQTuCFWoB1GT4Ifss4EVYDFanN0vu+aVKbLtsD1SO4FYYkjIpZ6TugtEw==",
+  "dgSpecHash": "IqjMyACHvgZZDEoDC0Sf8b9yZr0/EIZWaqQGFV6WU4dsMGuqmW4smtTYvZwrilwl7+3cC8apvVbWawrrCw852A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
+  "projectFilePath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\Gabriel\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
-    "C:\\Users\\Gabriel\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+    "C:\\Users\\Josue\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

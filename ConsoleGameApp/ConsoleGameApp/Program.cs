@@ -9,7 +9,6 @@ namespace War_Game
     {
         static void Main(string[] args)
         {
-            
             #region CardsCreationAndBotDeck
 
             Effect Elefecto = new Effect();
@@ -57,6 +56,9 @@ namespace War_Game
 
             #endregion
 
+            SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
+            typingSound.Load();
+
             string prompt = @"
 
       ██████╗  ██████╗ ██████╗       ███████╗    ███████╗███╗   ██╗ █████╗ ██████╗ 
@@ -89,8 +91,10 @@ namespace War_Game
                         case 0:
                             Console.Clear();
 
-                            ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 0);  // (C-APK)
-                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 0);  // (C-APK)
+                            typingSound.PlayLooping();
+                            ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 50);  // (C-APK)
+                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);  // (C-APK)
+                            typingSound.Stop();
                             string nickNamePlayer1 = Console.ReadLine();           //Console APK (C-APK)
                             Deck P1Deck = new Deck();
 
@@ -101,7 +105,7 @@ namespace War_Game
 (you cannot add the same card twice)";
                             string[] cards = { "Zeus", "Hermes", "Hera", "Apolo", "Poseidon", "Artemisa", "Afrodita", "Hefesto", "Ares", "Demeter", "Atenea", "Hestia", "Dioniso", "Hades", "Raijin", "Amaterasu", "Tsuki-Yomi", "Susanoo", "Fujin", "Rayujin", "Tenjin", "Hachiman", "Inari", "Omoikane", "Saruta-Hiko", "Kagutsuchi" };
 
-                          
+
 
                             Menu deckMenu = new Menu(newPromptDeck, cards);
                             bool validator = false;
@@ -192,8 +196,10 @@ namespace War_Game
                             Player P1 = new Player(nickNamePlayer1, P1Deck);
                             Console.Clear();
 
-                            ConsoleApp.PrintAnimation("Insert nick name Player 2: ", 0);  // (C-APK)
-                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 0);  // (C-APK)
+                            typingSound.PlayLooping();
+                            ConsoleApp.PrintAnimation("Insert nick name Player 2: ", 50);  // (C-APK)
+                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);  // (C-APK)
+                            typingSound.Stop();
                             string nickNamePlayer2 = Console.ReadLine();           //Console APK (C-APK)
 
                             Deck P2Deck = new Deck();
@@ -320,8 +326,8 @@ namespace War_Game
                                 P1.EndTurn = false;
                                 P2.EndTurn = false;
 
-                                    P1.DrawACard();
-                                    P2.DrawACard();
+                                P1.DrawACard();
+                                P2.DrawACard();
 
                                 turn++;
                             }
@@ -346,9 +352,11 @@ namespace War_Game
                             BotDeck.Shuffled();
                             Bot_easy DiazcaBot = new Bot_easy("DiazcaBot", BotDeck);
 
-                            ConsoleApp.PrintAnimation("Insert nick name Player : ", 0);  // (C-APK)
-                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 0);  // (C-APK)
-                            nickNamePlayer1 = Console.ReadLine();           //Console APK (C-APK)
+                            typingSound.PlayLooping();
+                            ConsoleApp.PrintAnimation("Insert nick name Player : ", 50); 
+                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
+                            typingSound.Stop();
+                            nickNamePlayer1 = Console.ReadLine();         
 
                             MyDeckTexter.Shuffled();
                             Player P3 = new Player(nickNamePlayer1, MyDeckTexter);
@@ -383,7 +391,7 @@ namespace War_Game
                                 {
                                     tempCard = null;
                                     tempCard = DiazcaBot.CardToPlay();
-                                    
+
                                     if (tempCard != null)
                                     {
                                         ConsoleApp.PlayACard(DiazcaBot, tempCard, DiazcaBot.TerrainToPlay(P3));
@@ -393,8 +401,8 @@ namespace War_Game
                                 P3.EndTurn = false;
                                 DiazcaBot.EndTurn = false;
 
-                                    P3.DrawACard();
-                                    DiazcaBot.DrawACard();
+                                P3.DrawACard();
+                                DiazcaBot.DrawACard();
 
                                 turn++;
                             }

@@ -33,3 +33,7 @@ Laguange Key Words
 => greateriqualthan
 => iqualof
 => empty
+=> destroy
+=> move
+=> powerup
+=> powerdown

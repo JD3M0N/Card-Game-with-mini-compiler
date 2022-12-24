@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ITr72FYfnMhnpRwdXR6pT7AdhdeV7AfsQlJ71SKf1vGWHcs7WEflPP+Lj+lAEwcEGrm0DUY90NY0K+QT0D6q7Q==",
+  "dgSpecHash": "3R1KZQp5MvyWQaTNhjPwim6+xD4+nmK9jICep3u2ayR3TZAqDlnP+hk7ABkJ4gFXKG2Xe8ZqJQ5ZaYKGlW1LOg==",
   "success": true,
   "projectFilePath": "E:\\Programming\\GitDesktop\\God-s_Snap\\ConsoleGameApp\\ConsoleGameApp\\ConsoleGameApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Josue\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

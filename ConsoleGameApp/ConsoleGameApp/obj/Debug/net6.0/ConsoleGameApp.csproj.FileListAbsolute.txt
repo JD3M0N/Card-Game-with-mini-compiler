@@ -52,3 +52,9 @@ C:\Users\Gabriel\Documents\GitHub\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\D
 C:\Users\Gabriel\Documents\GitHub\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ref\ConsoleGameApp.dll
 C:\Users\Gabriel\Documents\GitHub\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.pdb
 C:\Users\Gabriel\Documents\GitHub\God-s_Snap\ConsoleGameApp\ConsoleGameApp\obj\Debug\net6.0\ConsoleGameApp.genruntimeconfig.cache
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\System.Windows.Extensions.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\Programming\GitDesktop\God-s_Snap\ConsoleGameApp\ConsoleGameApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

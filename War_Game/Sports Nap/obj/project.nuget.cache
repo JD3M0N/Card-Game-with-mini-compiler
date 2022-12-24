@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "M1EL/FGfn90FDXZA3GR+W8rCayB2Ef6JCBWT4O03e1XJsYYBW5cJnEtzCzSBLIr0xg1P5OkpPnpJShr28xbPFw==",
+  "dgSpecHash": "IqjMyACHvgZZDEoDC0Sf8b9yZr0/EIZWaqQGFV6WU4dsMGuqmW4smtTYvZwrilwl7+3cC8apvVbWawrrCw852A==",
   "success": true,
   "projectFilePath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Josue\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

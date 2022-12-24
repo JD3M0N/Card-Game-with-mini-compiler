@@ -1,0 +1,35 @@
+Laguange Key Words 
+
+=> terrain 
+*.name
+*.conquest
+*.cardsamount
+=> topterrain
+*.name
+*.conquest
+*.cardsamount
+=> centerterrain
+*.name
+*.conquest
+*.cardsamount
+=> bottomterrain
+*.name
+*.conquest
+*.cardsamount
+=> player
+*.cardsinhand
+*.cardindeck
+=> card
+*.energycost
+*.name
+*.conquest
+=> turn
+=> this 
+=> or
+=> and
+=> lowerthan
+=> lowerequalthan
+=> greaterthan
+=> greateriqualthan
+=> iqualof
+=> empty

@@ -296,6 +296,9 @@ namespace War_Game
                                 P1.Energy = turn;
                                 P2.Energy = turn;
 
+                                P1.UpdatePublicTerrain();
+                                P2.UpdatePublicTerrain();
+
                                 Console.Clear();
                                 Console.WriteLine($"TURN: {turn}");
                                 ConsoleApp.PrintBoard(P1, P2);
@@ -339,13 +342,15 @@ namespace War_Game
                             break;
 
                         case 1:
-                            Console.Clear();    
+                            Console.Clear();
+                            BotDeck.Shuffled();
                             Bot_easy DiazcaBot = new Bot_easy("DiazcaBot", BotDeck);
 
-                            ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 0);  // (C-APK)
+                            ConsoleApp.PrintAnimation("Insert nick name Player : ", 0);  // (C-APK)
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 0);  // (C-APK)
                             nickNamePlayer1 = Console.ReadLine();           //Console APK (C-APK)
 
+                            MyDeckTexter.Shuffled();
                             Player P3 = new Player(nickNamePlayer1, MyDeckTexter);
 
                             turn = 1;
@@ -357,6 +362,9 @@ namespace War_Game
                             {
                                 P3.Energy = turn;
                                 DiazcaBot.Energy = turn;
+
+                                P3.UpdatePublicTerrain();
+                                DiazcaBot.UpdatePublicTerrain();
 
                                 Console.Clear();
                                 Console.WriteLine($"TURN: {turn}");

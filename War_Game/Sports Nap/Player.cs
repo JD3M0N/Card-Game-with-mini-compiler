@@ -67,6 +67,7 @@ namespace War_Game
             for (int i = 0; i < 3; i++)
             {
                 PublicTerrain[i].Conquest = Terrains[i].Conquest;
+                PublicTerrain[i].CardsPlayed.Clear();
 
                 foreach(Card c in Terrains[i].CardsPlayed)
                 {

@@ -217,7 +217,11 @@ namespace War_Game
                 i++;
             }
 
-            Console.WriteLine("Player Energy: " + P.Energy);
+            Console.WriteLine();
+            Console.Write("Player Energy: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(P.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();

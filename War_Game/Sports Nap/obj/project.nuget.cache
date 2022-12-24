@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "IqjMyACHvgZZDEoDC0Sf8b9yZr0/EIZWaqQGFV6WU4dsMGuqmW4smtTYvZwrilwl7+3cC8apvVbWawrrCw852A==",
+  "dgSpecHash": "ISOtp3xp8V+qM755ipK/gqNHXO1abAsmC/nLJM95MUA3mj4SGzZvcIuwEH0jj/AnYTXwCPbFePjt/OFgweFvRA==",
   "success": true,
-  "projectFilePath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
+  "projectFilePath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Josue\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\Josue\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
-    "C:\\Users\\Josue\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

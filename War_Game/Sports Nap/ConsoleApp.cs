@@ -217,22 +217,44 @@ namespace War_Game
                 i++;
             }
 
-            Console.WriteLine("Player Energy: " + P.Energy);
+            Console.WriteLine();
+            Console.Write("Player Energy: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(P.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
 
             int imputTerrain = 0;
             int imputCard = 0;
-            Console.WriteLine("Write the number of the card that u want to play: ");
             bool flag = false;
             while (!flag)
             {
-                imputCard = int.Parse(Console.ReadLine()) - 1;  // poner exepcion al enter
-                flag = true;
-                if (imputCard <= - 1 || imputCard > P.CardsInHand.Count() - 1)
+                bool catchFlag = false;
+
+                while (!catchFlag)
                 {
+                    try
+                    {
+                        Console.WriteLine("Write the number of the card that u want to play: ");
+                        imputCard = int.Parse(Console.ReadLine()) - 1;  
+                        flag = true;
+                        catchFlag = true;
+                    }
+                    catch (System.FormatException ex)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That's no moon ;)");
+                        Console.ResetColor();
+                        catchFlag = false;
+                    }
+                }
+                if (imputCard <= -1 || imputCard > P.CardsInHand.Count() - 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Sorry, that number isn't valid, try again");
+                    Console.ResetColor();
                     flag = false;
                 }
             }
@@ -244,7 +266,9 @@ namespace War_Game
 
                 while (!Terrain.TerrainHaveSpace(P.Terrains[imputTerrain]))
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("You have already played 4 cards in Terrain #" + (imputTerrain + 1));
+                    Console.ResetColor();
                     Console.WriteLine("Choose another terrain to play your card");
                     imputTerrain = int.Parse(Console.ReadLine()) - 1;
                 }

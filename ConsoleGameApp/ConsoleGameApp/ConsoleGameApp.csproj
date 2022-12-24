@@ -15,4 +15,10 @@
     <ProjectReference Include="..\..\War_Game\Sports Nap\War_Game.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="typewriter-2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

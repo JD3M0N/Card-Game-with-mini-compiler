@@ -3,19 +3,27 @@ Laguange Key Words
 => terrain 
 *.name
 *.conquest
+*.opponent.conquest
 *.cardsamount
+*.opponent.cardamount
 => topterrain
 *.name
 *.conquest
+*.opponent.conquest
 *.cardsamount
+*.opponent.cardamount
 => centerterrain
 *.name
 *.conquest
+*.opponent.conquest
 *.cardsamount
+*.opponent.cardamount
 => bottomterrain
 *.name
 *.conquest
+*.opponent.conquest
 *.cardsamount
+*.opponent.cardamount
 => player
 *.cardsinhand
 *.cardindeck
@@ -33,3 +41,6 @@ Laguange Key Words
 => greateriqualthan
 => iqualof
 => empty
+=> not
+
+¿¿¿Si el oponente tiene jugada una carta con mas de 6 de conquista, destruyela???

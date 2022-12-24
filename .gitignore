@@ -82,3 +82,6 @@ ConsoleGameApp/.vs/ConsoleGameApp/v17/.suo
 *.cache
 *.cache
 *.cache
+*.cache
+*.props
+*.editorconfig

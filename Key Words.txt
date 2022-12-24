@@ -3,18 +3,26 @@ Laguange Key Words
 => terrain 
 *.name
 *.conquest
+*.opponent.conquest
+*opponent.cardsamount
 *.cardsamount
 => topterrain
 *.name
 *.conquest
+*.opponent.conquest
+*opponent.cardsamount
 *.cardsamount
 => centerterrain
 *.name
 *.conquest
+*.opponent.conquest
+*opponent.cardsamount
 *.cardsamount
 => bottomterrain
 *.name
 *.conquest
+*.opponent.conquest
+*opponent.cardsamount
 *.cardsamount
 => player
 *.cardsinhand

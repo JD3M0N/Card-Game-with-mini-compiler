@@ -28,3 +28,5 @@ namespace War_Game
         }
     }
 }
+// hacer un try catch sino se encontro la palabra
+// textear el parser 

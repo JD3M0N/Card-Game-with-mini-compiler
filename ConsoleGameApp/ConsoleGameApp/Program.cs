@@ -9,7 +9,7 @@ namespace War_Game
     {
         static void Main(string[] args)
         {
-
+            
             #region CardsCreationAndBotDeck
 
             Effect Elefecto = new Effect();
@@ -80,7 +80,7 @@ namespace War_Game
             {
                 case 0:
                     string newPrompt = "How would u like to play?";
-                    string[] playOptions = { "Player vs Player", "Play vs Bot (development)" };
+                    string[] playOptions = { "Player vs Player", "Play vs Bot" };
                     Menu playManu = new Menu(newPrompt, playOptions);
                     int selectedPlayIndex = playManu.Run();
 

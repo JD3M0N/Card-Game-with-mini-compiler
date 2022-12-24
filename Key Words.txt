@@ -31,6 +31,7 @@ Laguange Key Words
 *.energycost
 *.name
 *.conquest
+=> allcards
 => turn
 => this 
 => or

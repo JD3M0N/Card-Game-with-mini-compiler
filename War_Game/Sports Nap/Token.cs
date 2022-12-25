@@ -48,7 +48,7 @@ namespace War_Game
                     break;
                 case "topterrain.name":
                     {
-                        // fix
+                        this.value = -2;
                     }
                     break;
                 case "topterrain.conquest":
@@ -73,7 +73,7 @@ namespace War_Game
                     break;
                 case "bottomterrain.name":
                     {
-                        // fix
+                        this.value = -2;
                     }
                     break;
                 case "bottomterrain.conquest":
@@ -98,7 +98,7 @@ namespace War_Game
                     break;
                 case "centerterrain.name":
                     {
-                        // fix
+                        this.value = -2;
                     }
                     break;
                 case "centerterrain.conquest":
@@ -148,7 +148,7 @@ namespace War_Game
                     break;
                 case "card.name":
                     {
-                        //fix
+                        this.value = -2;
                     }
                     break;
                 case "card.energycost":

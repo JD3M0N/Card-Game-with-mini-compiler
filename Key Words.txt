@@ -27,6 +27,9 @@ Laguange Key Words
 => player
 *.cardsinhand
 *.cardindeck
+=> opponent
+*.cardsinhand
+*.cardsindeck
 => card
 *.energycost
 *.name
@@ -43,6 +46,10 @@ Laguange Key Words
 => iqualof
 => empty
 => destroy
+=> discard
 => move
+*.right
+*.center
+*.left
 => powerup
 => powerdown

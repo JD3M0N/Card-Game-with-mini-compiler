@@ -227,6 +227,8 @@ namespace War_Game
                     }
                     break;
             }
+
+            //cambiar turno y carta para una exepcion
         }
     }
 }

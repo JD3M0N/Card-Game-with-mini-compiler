@@ -381,6 +381,7 @@ namespace War_Game
                                 Console.WriteLine();
                                 Console.WriteLine("Write something to continue: ");
                                 cont1nue = Console.ReadLine();
+                                
                                 Console.Clear();
 
                                 while (!P3.EndTurn)

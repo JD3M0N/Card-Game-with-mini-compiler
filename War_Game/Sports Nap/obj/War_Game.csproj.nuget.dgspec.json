@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {}
+    "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {
+    "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
+        "projectUniqueName": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
         "projectName": "War_Game",
-        "projectPath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
-        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabriel\\Documents\\GitHub\\God-s_Snap\\War_Game\\Sports Nap\\obj\\",
+        "projectPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\War_Game.csproj",
+        "packagesPath": "C:\\Users\\Josue\\.nuget\\packages\\",
+        "outputPath": "E:\\Programming\\GitDesktop\\God-s_Snap\\War_Game\\Sports Nap\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

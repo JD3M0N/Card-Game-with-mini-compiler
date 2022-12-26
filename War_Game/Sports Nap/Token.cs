@@ -11,10 +11,20 @@ namespace War_Game
         public string Type;
         public string Description;
         public int value = -1;
+        public string nameValue = "";
+
+
         public Token(string type, string description)
         {
             Type = type;
             Description = description;
+        }
+
+        public Token(string type, string description, int value)
+        {
+            Type = type;
+            Description = description;
+            this.value = value;
         }
 
         public void GetValue (Player P1, Player P2, int turn, Card card)
@@ -23,166 +33,218 @@ namespace War_Game
             {
                 case "terrain.name":
                     {
-                        //en el terreno que se encuentra esta carta. name
+                        this.Type = "name";
+                        foreach (Terrain t in P1.Terrains)
+                        {
+                            if (t.CardsPlayed.Contains (card))
+                            {
+                                this.Description = t.Name;
+                                break;
+                            }
+                        }
                     }
                     break;
                 case "terrain.conquest":
                     {
-                        // fix
+                        this.Type = "number";
+                        foreach (Terrain t in P1.Terrains)
+                        {
+                            if (t.CardsPlayed.Contains(card))
+                            {
+                                this.value = t.Conquest;
+                                break;
+                            }
+                        }
                     }
                     break;
                 case "terrain.cardsamount":
                     {
-                        // fix
+                        this.Type = "number";
+                        foreach (Terrain t in P1.Terrains)
+                        {
+                            if (t.CardsPlayed.Contains(card))
+                            {
+                                this.value = t.CardsPlayed.Count;
+                                break;
+                            }
+                        }
                     }
                     break;
                 case "terrain.opponent.cardsamount":
                     {
-                        // fix
+                        //fix
                     }
                     break;
                 case "terrain.opponent.conquest":
                     {
-                        // fix
+                        //fix
                     }
                     break;
                 case "topterrain.name":
                     {
-                        // fix
+                        this.Type = "name";
+                        this.nameValue = P1.Terrains[1].Name;
                     }
                     break;
                 case "topterrain.conquest":
                     {
+                        this.Type = "number";
                         this.value = P1.Terrains[1].Conquest;
                     }
                     break;
                 case "topterrain.cardsamount":
                     {
+                        this.Type = "number";
                         this.value = P1.Terrains[1].CardsPlayed.Count();
                     }
                     break;
                 case "topterrain.opponent.conquest":
                     {
+                        this.Type = "number";
                         this.value = P2.Terrains[1].Conquest;
                     }
                     break;
                 case "topterrain.opponent.cardsamount":
                     {
+                        this.Type = "number";
                         this.value = P2.Terrains[1].CardsPlayed.Count();
                     }
                     break;
                 case "bottomterrain.name":
                     {
-                        // fix
+                        this.Type = "name";
+                        this.nameValue = P1.Terrains[3].Name;
                     }
                     break;
                 case "bottomterrain.conquest":
                     {
+                        this.Type = "number";
                         this.value = P1.Terrains[3].Conquest;
                     }
                     break;
                 case "bottomterrain.cardsamount":
                     {
+                        this.Type = "number";
                         this.value = P1.Terrains[3].CardsPlayed.Count();
                     }
                     break;
                 case "bottomterrain.opponent.conquest":
                     {
+                        this.Type = "number";
                         this.value = P2.Terrains[3].Conquest;
                     }
                     break;
                 case "bottomterrain.opponent.cardsamount":
                     {
+                        this.Type = "number";
                         this.value = P2.Terrains[3].CardsPlayed.Count();
                     }
                     break;
                 case "centerterrain.name":
                     {
-                        // fix
+                        this.Type = "name";
+                        this.nameValue = P1.Terrains[2].Name;
                     }
                     break;
                 case "centerterrain.conquest":
                     {
+                        this.Type = "number";
                         this.value = P1.Terrains[2].Conquest;
                     }
                     break;
                 case "centerterrain.cardsamount":
                     {
+                        this.Type = "number";
                         this.value = P1.Terrains[2].CardsPlayed.Count();
                     }
                     break;
                 case "centerterrain.opponent.conquest":
                     {
+                        this.Type = "number";
                         this.value = P2.Terrains[2].Conquest;
                     }
                     break;
                 case "centerterrain.opponent.cardsamount":
                     {
+                        this.Type = "number";
                         this.value = P2.Terrains[2].CardsPlayed.Count();
                     }
                     break;
                 case "player.cardsinhand":
                     {
+                        this.Type = "number";
                         this.value = P1.CardsInHand.Count();
                     }
                     break;
                 case "player.cardsindeck":
                     {
+                        this.Type = "number";
                         this.value = P1.PlayerDeck.cards.Count();
                     }
                     break;
                 case "opponent.cardsinhand":
                     {
+                        this.Type = "number";
                         this.value = P2.CardsInHand.Count();
                     }
                     break;
                 case "opponent.cardsindeck":
                     {
+                        this.Type = "number";
                         this.value = P2.PlayerDeck.cards.Count();
                     }
                     break;
                 case "turn":
                     {
+                        this.Type = "number";
                         this.value = turn;
                     }
                     break;
                 case "card.name":
                     {
-                        //fix
+                        this.Type = "name";
+                        this.nameValue = card.cardName;
                     }
                     break;
                 case "card.energycost":
                     {
+                        this.Type = "number";
                         this.value = card.Energy;
                     }
                     break;
                 case "card.conquest":
                     {
+                        this.Type = "number";
                         this.value = card.Conquest;
                     }
                     break;
                 case "move.right":
                     {
+                        this.Type = "accion";
                         this.value = -1;
                     }
                     break;
                 case "move.left":
                     {
+                        this.Type = "accion";
                         this.value = -1;
                     }
                     break;
                 case "move.center":
                     {
+                        this.Type = "accion";
                         this.value = -1;
                     }
                     break;
                 case "destroy":
                     {
+                        this.Type = "accion";
                         this.value = -1;
                     }
                     break;
                 case "discard":
                     {
+                        this.Type = "accion";
                         this.value = -1;
                     }
                     break;
@@ -211,6 +273,16 @@ namespace War_Game
                         this.value = -1;
                     }
                     break;
+                case "greateriqualof":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "loweriqualof":
+                    {
+                        this.value = -1;
+                    }
+                    break;
                 case "powerup":
                     {
                         this.value = -1;
@@ -223,10 +295,21 @@ namespace War_Game
                     break;
                 case "allcards":
                     {
-                        this.value= -1;
+                        this.value = -1;
+                    }
+                    break;
+                case "(":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case ")":
+                    {
+                        this.value = -1;
                     }
                     break;
             }
         }
     }
 }
+

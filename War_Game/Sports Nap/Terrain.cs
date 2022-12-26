@@ -8,6 +8,7 @@ namespace War_Game
 {
     public class Terrain
     {
+        public string Name = "";
         public int Conquest = 0;
         private List<Card> cardsPlayed = new List<Card>(); 
         //public Effect Effecto; 

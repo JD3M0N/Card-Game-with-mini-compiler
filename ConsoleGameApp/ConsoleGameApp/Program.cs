@@ -1,12 +1,14 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using System.Media;
-
+using Newtonsoft.Json;
 
 namespace War_Game
 {
     public class Main_Game
     {
+        private static string cardsPath = @"E:\Programming\GitDesktop\God-s_Snap\Cards.json";
+        private static string decksPath = @"E:\Programming\GitDesktop\God-s_Snap\Decks.json";
         static void Main(string[] args)
         {
             #region CardsCreationAndBotDeck
@@ -56,8 +58,16 @@ namespace War_Game
 
             #endregion
 
-            SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
+            List <Card> cardList = GetCards();
+            SerializeCardJsonFile(cardList);
+            List <Deck> deckList = GetDecks();
+            SerializeDeckJsonFile(deckList);
+        
+
+        SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
             typingSound.Load();
+
+            #region FirstMenuOption
 
             string prompt = @"
 
@@ -78,6 +88,8 @@ namespace War_Game
             Menu mainManu = new Menu(prompt, options);
             int selectedIndex = mainManu.Run();
 
+            #endregion
+
             switch (selectedIndex)
             {
                 case 0:
@@ -88,6 +100,8 @@ namespace War_Game
 
                     switch (selectedPlayIndex)
                     {
+
+                        #region PlayVSPlayer 
                         case 0:
                             Console.Clear();
 
@@ -344,9 +358,13 @@ namespace War_Game
                                                       
  
 ");
+
+                            #endregion
                             Console.WriteLine(WhoWon(P1, P2));
                             break;
 
+
+                        #region PlayVSBot
                         case 1:
                             Console.Clear();
                             BotDeck.Shuffled();
@@ -420,6 +438,7 @@ namespace War_Game
                                                       
  
 ");
+                            #endregion
                             Console.WriteLine(WhoWon(P3, DiazcaBot));
 
                             break;
@@ -441,6 +460,7 @@ namespace War_Game
                 player.Terrains[indexTerrain].CardsPlayed.Add(cardPlayed);
                 player.Terrains[indexTerrain].Conquest += cardPlayed.Conquest;
                 player.CardsInHand.Remove(cardPlayed);
+                player.Energy -= cardPlayed.Energy;
             }
 
             string WhoWon(Player one, Player two)
@@ -484,6 +504,92 @@ namespace War_Game
                 else return one.NickName;
             }
         }
+        #region WrittingJson
+        public static List<Card> GetCards ()
+        {
+            List<Card> cardList = new List<Card>();
+            Effect newEffect = new Effect();
 
+            Card Hestia = new Card("Hestia", 3, 3, newEffect);
+            cardList.Add(Hestia);
+            Card Atenea = new Card("Atenea", 4, 5, newEffect);
+            cardList.Add(Atenea);
+            Card Demeter = new Card("Demeter", 2, 3, newEffect);
+            cardList.Add(Demeter);
+            Card Ares = new Card("Ares", 6, 12, newEffect);
+            cardList.Add(Ares);
+            Card Hefesto = new Card("Hefesto", 4, 5, newEffect);
+            cardList.Add(Hefesto);
+            Card Afrodita = new Card("Afrodita", 3, 3, newEffect);
+            cardList.Add(Afrodita);
+            Card Artemisa = new Card("Artemisa", 1, 1, newEffect);
+            cardList.Add(Artemisa);
+            Card Poseidon = new Card("Poseidon", 4, 6, newEffect);
+            cardList.Add(Poseidon);
+            Card Apolo = new Card("Apolo", 2, 2, newEffect);
+            cardList.Add(Apolo);
+            Card Zeus = new Card("Zeus", 5, 9, newEffect);
+            cardList.Add(Zeus);
+            Card Hermes = new Card("Hermes", 1, 2, newEffect);
+            cardList.Add(Hermes);
+            Card Hera = new Card("Hera", 3, 4, newEffect);
+            cardList.Add(Hera);
+            Card Dioniso = new Card("Dioniso", 1, 1, newEffect);
+            cardList.Add(Dioniso);
+            Card Hades = new Card("Hades", 6, 10, newEffect);
+            cardList.Add(Hades);
+            Card Raijin = new Card("Raijin", 3, 5, newEffect);
+            cardList.Add(Raijin);
+            Card Amateratsu = new Card("Amateratsu", 2, 4, newEffect);
+            cardList.Add(Amateratsu);
+            Card Susanoo = new Card("Susanoo", 6, 9, newEffect);
+            cardList.Add(Susanoo);
+
+            return cardList;
+        }
+
+        public static List <Deck> GetDecks ()
+        {
+            List <Deck> deckList = new List<Deck>();
+            
+            return deckList;
+        }
+
+        public static void SerializeCardJsonFile (List <Card> cardList)
+        {
+            string cardJson = JsonConvert.SerializeObject(cardList.ToArray(), Formatting.Indented);
+
+            File.WriteAllText(cardsPath, cardJson);
+        }
+
+        public static void SerializeDeckJsonFile (List <Deck> deckList)
+        {
+            string deckJson = JsonConvert.SerializeObject(deckList.ToArray(), Formatting.Indented);
+
+            File.WriteAllText(deckJson, decksPath);
+        }
+        #endregion
+
+        #region ReadingJson 
+        public static string GetCardsJsonFromFile()
+        {
+            string cardJsonFromFile;
+            using (var reader = new StreamReader(cardsPath))
+            {
+                cardJsonFromFile = reader.ReadToEnd(); 
+            }
+
+            return cardJsonFromFile;
+        }
+
+        public static List<Card> DeserializeJsonFile (string cardJasonFromFile)
+        {
+            List<Card> cardList = JsonConvert.DeserializeObject<List<Card>>(cardJasonFromFile);
+
+            return cardList;
+        }
+        #endregion
     }
 }
+
+//decks need to hace a deck ID to make sure players dont play with the same deck

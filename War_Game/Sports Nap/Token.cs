@@ -13,6 +13,10 @@ namespace War_Game
         public int value = -1;
         public string nameValue = "";
 
+        public Token()
+        {
+
+        }
 
         public Token(string type, string description)
         {

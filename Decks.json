@@ -1,0 +1,156 @@
+[
+  {
+    "DeckName": "MyDeckTexter",
+    "cards": [
+      {
+        "cardName": "Zeus",
+        "Energy": 5,
+        "Conquest": 9,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Hermes",
+        "Energy": 1,
+        "Conquest": 2,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Hera",
+        "Energy": 3,
+        "Conquest": 4,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Apolo",
+        "Energy": 2,
+        "Conquest": 2,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Poseidon",
+        "Energy": 4,
+        "Conquest": 6,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Artemisa",
+        "Energy": 1,
+        "Conquest": 1,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Afrodita",
+        "Energy": 3,
+        "Conquest": 3,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Hefesto",
+        "Energy": 4,
+        "Conquest": 5,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Ares",
+        "Energy": 6,
+        "Conquest": 12,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Demeter",
+        "Energy": 2,
+        "Conquest": 3,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Atenea",
+        "Energy": 4,
+        "Conquest": 5,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Dioniso",
+        "Energy": 1,
+        "Conquest": 1,
+        "Effecto": {}
+      }
+    ]
+  },
+  {
+    "DeckName": "BotDeck",
+    "cards": [
+      {
+        "cardName": "Zeus",
+        "Energy": 5,
+        "Conquest": 9,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Hermes",
+        "Energy": 1,
+        "Conquest": 2,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Hera",
+        "Energy": 3,
+        "Conquest": 4,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Apolo",
+        "Energy": 2,
+        "Conquest": 2,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Poseidon",
+        "Energy": 4,
+        "Conquest": 6,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Artemisa",
+        "Energy": 1,
+        "Conquest": 1,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Afrodita",
+        "Energy": 3,
+        "Conquest": 3,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Hefesto",
+        "Energy": 4,
+        "Conquest": 5,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Ares",
+        "Energy": 6,
+        "Conquest": 12,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Demeter",
+        "Energy": 2,
+        "Conquest": 3,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Atenea",
+        "Energy": 4,
+        "Conquest": 5,
+        "Effecto": {}
+      },
+      {
+        "cardName": "Dioniso",
+        "Energy": 1,
+        "Conquest": 1,
+        "Effecto": {}
+      }
+    ]
+  }
+]

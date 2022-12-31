@@ -8,14 +8,14 @@ namespace War_Game
 {
     public class Parse
     {
-        public List<Token> Parsing(string efect)
+        public static List<Token> Parsing(string efect)
         {
             List<Token> tokens = new List<Token>();
-            string[] keywords = efect.Split(' ', ':', ';');
+            string[] keywords = efect.Split(' ');
 
             foreach (string keyword in keywords)
             {
-                if (keyword == "(" || keyword == ")" || keyword == "and" || keyword == "or" || keyword == "lowerthan" || keyword == "lowerequalthan" || keyword == "greaterthan" || keyword == "greaterequalthan" || keyword == "equalof" || keyword == "not")
+                if (keyword == "(" || keyword == ")" || keyword == "and" || keyword == "or" || keyword == "lowerthan" || keyword == "lowerequalthan" || keyword == "greaterthan" || keyword == "greaterequalthan" || keyword == "equalof" || keyword == "not" || keyword == ";" || keyword == ":")
                 {
                     tokens.Add(new Token("symbol", keyword));
                 }
@@ -50,9 +50,9 @@ namespace War_Game
             return tokens;
         }
 
-        public bool IsToken(string token)
+        public static bool IsToken(string token)
         {
-            if (token == "true" || token == "false" || token == "(" || token == ")" || token == "terrain.name" || token == "terrain.conquest" ||token == "terrain.opponent.conquest" ||token == "terrain.opponent.cardsamount" || token == "terrain.cardsamount" || token == "topterrain.name" || token == "topterrain.conquest" ||token == "topterrain.opponent.conquest" ||token == "topterrain.opponent.cardsamount" ||token == "topterrain.cardsamount" || token == "centerterrain.name" || token == "centerterrain.conquest" ||token == "centerterrain.opponent.conquest" ||token == "centerterrain.opponent.cardsamount" ||token == "centerterrain.cardsamount" || token == "bottomterrain.name" ||token == "bottomterrain.conquest" ||token == "bottomterrain.cardsamount" ||token == "bottomterrain.opponent.cardsamount" ||token == "bottomterrain.opponent.conquest" ||token == "player.cardsinhand" ||token == "player.cardsindeck" ||token == "opponent.cardsinhand" ||token == "opponent.cardsindeck" ||token == "card.energycost" ||token == "card.consquest" ||token == "card.name" ||token == "turn" ||token == "allcards" ||token == "destroy" ||token == "move.right" ||token == "discard" ||token == "move.left" ||token == "move.center" || token == "empty" ||token == "powerup" ||token == "powerdown" ||token == "and" || token == "or" || token == "lowerthan" ||token == "greaterthan" ||token == "iqualof" || token == "loweriqualof" || token == "greateriqualof")
+            if (token == "true" || token == "false" || token == "(" || token == ")" || token == "terrain.name" || token == "terrain.conquest" ||token == "terrain.opponent.conquest" ||token == "terrain.opponent.cardsamount" || token == "terrain.cardsamount" || token == "topterrain.name" || token == "topterrain.conquest" ||token == "topterrain.opponent.conquest" ||token == "topterrain.opponent.cardsamount" ||token == "topterrain.cardsamount" || token == "centerterrain.name" || token == "centerterrain.conquest" ||token == "centerterrain.opponent.conquest" ||token == "centerterrain.opponent.cardsamount" ||token == "centerterrain.cardsamount" || token == "bottomterrain.name" ||token == "bottomterrain.conquest" ||token == "bottomterrain.cardsamount" ||token == "bottomterrain.opponent.cardsamount" ||token == "bottomterrain.opponent.conquest" ||token == "player.cardsinhand" ||token == "player.cardsindeck" ||token == "opponent.cardsinhand" ||token == "opponent.cardsindeck" ||token == "card.energycost" ||token == "card.consquest" ||token == "card.name" ||token == "turn" ||token == "allcards" ||token == "destroy" ||token == "move.right" ||token == "discard" ||token == "move.left" ||token == "move.center" || token == "empty" ||token == "powerup" ||token == "powerdown" ||token == "and" || token == "or" || token == "lowerthan" ||token == "greaterthan" ||token == "iqualof" || token == "loweriqualof" || token == "greateriqualof" || token == ";" || token == ":" || token == "Empty")
             {
                 return true;
             }
@@ -60,7 +60,7 @@ namespace War_Game
             return false;
         }
 
-        public bool IsNumber(string token)
+        public static bool IsNumber(string token)
         {
             try
             {

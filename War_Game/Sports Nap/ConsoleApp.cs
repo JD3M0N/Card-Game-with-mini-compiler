@@ -238,7 +238,7 @@ namespace War_Game
                     try
                     {
                         Console.WriteLine("Write the number of the card that u want to play: ");
-                        imputCard = int.Parse(Console.ReadLine()) - 1;  
+                        imputCard = int.Parse(Console.ReadLine()) - 1;
                         flag = true;
                         catchFlag = true;
                     }
@@ -262,7 +262,22 @@ namespace War_Game
             if (Card.CardCanBePlayed(P, P.CardsInHand[imputCard]))
             {
                 Console.WriteLine("Write in what terrain u want to play?: ");
-                imputTerrain = int.Parse(Console.ReadLine()) - 1;
+                bool catchFlag = true;
+                while (catchFlag)
+                {
+                    try
+                    {
+                        catchFlag = false;
+                        imputTerrain = int.Parse(Console.ReadLine()) - 1; 
+                    }
+                    catch (System.FormatException ex)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That's no moon ;)");
+                        Console.ResetColor();
+                        catchFlag = true;
+                    }
+                }
 
                 while (!Terrain.TerrainHaveSpace(P.Terrains[imputTerrain]))
                 {
@@ -276,7 +291,9 @@ namespace War_Game
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You don`t have enough Energy to play this card");
+                Console.ResetColor();
             }
         }
         public static void PlayACard(Player player, Card cardPlayed, int indexTerrain)
@@ -288,3 +305,5 @@ namespace War_Game
         }
     }
 }
+
+// implementar la sobrecarga del metodo print a card para que printee una carta con el efecto, y asi mostrarla en la creacion de carta

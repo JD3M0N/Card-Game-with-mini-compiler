@@ -8,9 +8,18 @@ namespace War_Game
 {
     public class Effect
     {
+        public List<Token> effect = new List<Token>();
         public Effect()
         {
 
+        }
+
+        public Effect(List<Token> tokenList)
+        {
+            foreach (Token token in tokenList)
+            {
+                effect.Add(token);
+            }
         }
     }
 }

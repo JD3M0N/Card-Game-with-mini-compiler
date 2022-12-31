@@ -10,10 +10,10 @@ namespace War_Game
     {
         public string DeckName;
         public List<Card> cards = new List<Card>();
-
+        public static int DeckID = 0;
         public Deck()
         {
-
+            DeckID++;
         }
 
         public bool ValidDeck(List<Card> aDeck)
@@ -31,7 +31,7 @@ namespace War_Game
             Random rand = new Random();
             List<Card> list = new List<Card>();
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < cards.Count; i++)
             {
                 int cardRandIndex = rand.Next(0, cards.Count);
                 list.Add(cards[cardRandIndex]);

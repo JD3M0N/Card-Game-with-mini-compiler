@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Media;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace War_Game
 {
@@ -11,60 +14,20 @@ namespace War_Game
         private static string decksPath = @"E:\Programming\GitDesktop\God-s_Snap\Decks.json";
         static void Main(string[] args)
         {
-            #region CardsCreationAndBotDeck
+            #region Getting Cards and Decks from Json
 
-            Effect Elefecto = new Effect();
-            Card Hestia = new Card("Hestia", 3, 3, Elefecto);
-            Card Atenea = new Card("Atenea", 4, 5, Elefecto);
-            Card Demeter = new Card("Demeter", 2, 3, Elefecto);
-            Card Ares = new Card("Ares", 6, 12, Elefecto);
-            Card Hefesto = new Card("Hefesto", 4, 5, Elefecto);
-            Card Afrodita = new Card("Afrodita", 3, 3, Elefecto);
-            Card Artemisa = new Card("Artemisa", 1, 1, Elefecto);
-            Card Poseidon = new Card("Poseidon", 4, 6, Elefecto);
-            Card Apolo = new Card("Apolo", 2, 2, Elefecto);
-            Card Zeus = new Card("Zeus", 5, 9, Elefecto);
-            Card Hermes = new Card("Hermes", 1, 2, Elefecto);
-            Card Hera = new Card("Hera", 3, 4, Elefecto);
-            Card Dioniso = new Card("Dioniso", 1, 1, Elefecto);
-            Card Hades = new Card("Hades", 6, 10, Elefecto);
+            //List <Card> cardList = GetCards();
+            //SerializeCardJsonFile(cardList);
 
-            Deck BotDeck = new Deck();
-            Deck MyDeckTexter = new Deck();
-            BotDeck.cards.Add(Zeus);
-            MyDeckTexter.cards.Add(Zeus);
-            BotDeck.cards.Add(Hermes);
-            MyDeckTexter.cards.Add(Hermes);
-            BotDeck.cards.Add(Hera);
-            MyDeckTexter.cards.Add(Hera);
-            BotDeck.cards.Add(Apolo);
-            MyDeckTexter.cards.Add(Apolo);
-            BotDeck.cards.Add(Poseidon);
-            MyDeckTexter.cards.Add(Poseidon);
-            BotDeck.cards.Add(Artemisa);
-            MyDeckTexter.cards.Add(Artemisa);
-            BotDeck.cards.Add(Afrodita);
-            MyDeckTexter.cards.Add(Afrodita);
-            BotDeck.cards.Add(Hefesto);
-            MyDeckTexter.cards.Add(Hefesto);
-            BotDeck.cards.Add(Ares);
-            MyDeckTexter.cards.Add(Ares);
-            BotDeck.cards.Add(Demeter);
-            MyDeckTexter.cards.Add(Demeter);
-            BotDeck.cards.Add(Atenea);
-            MyDeckTexter.cards.Add(Atenea);
-            BotDeck.cards.Add(Dioniso);
-            MyDeckTexter.cards.Add(Dioniso);
 
+            string jsonCards = GetCardsJsonFromFile();
+            string jsonDeck = GetDecksJsonFromFile();
+            DataSet dataset = new DataSet();
+            dataset.cardsDataSet = DeserializeCardsJsonFile(jsonCards);
+            dataset.deckDataSet = DeserializeDecksJsonFile(jsonDeck);
             #endregion
 
-            List <Card> cardList = GetCards();
-            SerializeCardJsonFile(cardList);
-            List <Deck> deckList = GetDecks();
-            SerializeDeckJsonFile(deckList);
-        
-
-        SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
+            SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
             typingSound.Load();
 
             #region FirstMenuOption
@@ -84,7 +47,7 @@ namespace War_Game
  Welcome to War Game! What would you like to do?
 (Use the arrow keys to cycle through the options and press enter to select an option.)";
 
-            string[] options = { "Play", "About", "Exit" };
+            string[] options = { "Play", "About", "Card Creation", "Deck Creation", "Exit" };
             Menu mainManu = new Menu(prompt, options);
             int selectedIndex = mainManu.Run();
 
@@ -135,59 +98,59 @@ namespace War_Game
                                     switch (deckMenuIndex)
                                     {
                                         case 0:
-                                            P1Deck.cards.Add(Zeus);
+                                            P1Deck.cards.Add(dataset.GetACard("Zeus"));
                                             break;
 
                                         case 1:
-                                            P1Deck.cards.Add(Hermes);
+                                            P1Deck.cards.Add(dataset.GetACard("Hermes"));
                                             break;
 
                                         case 2:
-                                            P1Deck.cards.Add(Hera);
+                                            P1Deck.cards.Add(dataset.GetACard("Hera"));
                                             break;
 
                                         case 3:
-                                            P1Deck.cards.Add(Apolo);
+                                            P1Deck.cards.Add(dataset.GetACard("Apolo"));
                                             break;
 
                                         case 4:
-                                            P1Deck.cards.Add(Poseidon);
+                                            P1Deck.cards.Add(dataset.GetACard("Poseidon"));
                                             break;
 
                                         case 5:
-                                            P1Deck.cards.Add(Artemisa);
+                                            P1Deck.cards.Add(dataset.GetACard("Artemisa"));
                                             break;
 
                                         case 6:
-                                            P1Deck.cards.Add(Afrodita);
+                                            P1Deck.cards.Add(dataset.GetACard("Afrodita"));
                                             break;
 
                                         case 7:
-                                            P1Deck.cards.Add(Hefesto);
+                                            P1Deck.cards.Add(dataset.GetACard("Hefesto"));
                                             break;
 
                                         case 8:
-                                            P1Deck.cards.Add(Ares);
+                                            P1Deck.cards.Add(dataset.GetACard("Ares"));
                                             break;
 
                                         case 9:
-                                            P1Deck.cards.Add(Demeter);
+                                            P1Deck.cards.Add(dataset.GetACard("Demeter"));
                                             break;
 
                                         case 10:
-                                            P1Deck.cards.Add(Atenea);
+                                            P1Deck.cards.Add(dataset.GetACard("Atenea"));
                                             break;
 
                                         case 11:
-                                            P1Deck.cards.Add(Hestia);
+                                            P1Deck.cards.Add(dataset.GetACard("Hestia"));
                                             break;
 
                                         case 12:
-                                            P1Deck.cards.Add(Dioniso);
+                                            P1Deck.cards.Add(dataset.GetACard("Dionisio"));
                                             break;
 
                                         case 13:
-                                            P1Deck.cards.Add(Hades);
+                                            P1Deck.cards.Add(dataset.GetACard("Hades"));
                                             break;
                                     }
                                 }
@@ -232,59 +195,59 @@ namespace War_Game
                                     switch (deckMenuIndex)
                                     {
                                         case 0:
-                                            P2Deck.cards.Add(Zeus);
+                                            P2Deck.cards.Add(dataset.GetACard("Zeus"));
                                             break;
 
                                         case 1:
-                                            P2Deck.cards.Add(Hermes);
+                                            P2Deck.cards.Add(dataset.GetACard("Hermes"));
                                             break;
 
                                         case 2:
-                                            P2Deck.cards.Add(Hera);
+                                            P2Deck.cards.Add(dataset.GetACard("Hera"));
                                             break;
 
                                         case 3:
-                                            P2Deck.cards.Add(Apolo);
+                                            P2Deck.cards.Add(dataset.GetACard("Apolo"));
                                             break;
 
                                         case 4:
-                                            P2Deck.cards.Add(Poseidon);
+                                            P2Deck.cards.Add(dataset.GetACard("Poseidon"));
                                             break;
 
                                         case 5:
-                                            P2Deck.cards.Add(Artemisa);
+                                            P2Deck.cards.Add(dataset.GetACard("Artemisa"));
                                             break;
 
                                         case 6:
-                                            P2Deck.cards.Add(Afrodita);
+                                            P2Deck.cards.Add(dataset.GetACard("Afrodita"));
                                             break;
 
                                         case 7:
-                                            P2Deck.cards.Add(Hefesto);
+                                            P2Deck.cards.Add(dataset.GetACard("Hefesto"));
                                             break;
 
                                         case 8:
-                                            P2Deck.cards.Add(Ares);
+                                            P2Deck.cards.Add(dataset.GetACard("Ares"));
                                             break;
 
                                         case 9:
-                                            P2Deck.cards.Add(Demeter);
+                                            P2Deck.cards.Add(dataset.GetACard("Demeter"));
                                             break;
 
                                         case 10:
-                                            P2Deck.cards.Add(Atenea);
+                                            P2Deck.cards.Add(dataset.GetACard("Atenea"));
                                             break;
 
                                         case 11:
-                                            P2Deck.cards.Add(Hestia);
+                                            P2Deck.cards.Add(dataset.GetACard("Hestia"));
                                             break;
 
                                         case 12:
-                                            P2Deck.cards.Add(Dioniso);
+                                            P2Deck.cards.Add(dataset.GetACard("Dionisio"));
                                             break;
 
                                         case 13:
-                                            P2Deck.cards.Add(Hades);
+                                            P2Deck.cards.Add(dataset.GetACard("Hades"));
                                             break;
                                     }
                                 }
@@ -367,17 +330,17 @@ namespace War_Game
                         #region PlayVSBot
                         case 1:
                             Console.Clear();
-                            BotDeck.Shuffled();
-                            Bot_easy DiazcaBot = new Bot_easy("DiazcaBot", BotDeck);
+                            Bot_easy DiazcaBot = new Bot_easy("DiazcaBot", dataset.GetADeck("BotDeck"));
+                            DiazcaBot.PlayerDeck.Shuffled();
 
                             typingSound.PlayLooping();
-                            ConsoleApp.PrintAnimation("Insert nick name Player : ", 50); 
+                            ConsoleApp.PrintAnimation("Insert nick name Player : ", 50);
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
                             typingSound.Stop();
-                            nickNamePlayer1 = Console.ReadLine();         
+                            nickNamePlayer1 = Console.ReadLine();
 
-                            MyDeckTexter.Shuffled();
-                            Player P3 = new Player(nickNamePlayer1, MyDeckTexter);
+                            Player P3 = new Player(nickNamePlayer1, dataset.GetADeck("MydeckTexter"));
+                            P3.PlayerDeck.Shuffled();
 
                             turn = 1;
                             cont1nue = "";
@@ -399,7 +362,7 @@ namespace War_Game
                                 Console.WriteLine();
                                 Console.WriteLine("Write something to continue: ");
                                 cont1nue = Console.ReadLine();
-                                
+
                                 Console.Clear();
 
                                 while (!P3.EndTurn)
@@ -450,6 +413,81 @@ namespace War_Game
                     break;
 
                 case 2:
+                    #region Card Creation
+                    Console.Clear();
+                    Card temp = new Card();
+                    Console.WriteLine("Every card needs to have a name, an energy cost, and conquest value, and a effect in order to be a valid card");
+                    Console.WriteLine("Make sure you have read alreaty the about seccion about how to play and how to create effects");
+                    Console.WriteLine("Type the name of the card");
+                    temp.cardName = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("Now set its energy cost");
+                    bool catchFlag = true;
+                    while (catchFlag)
+                    {
+                        try
+                        {
+                            temp.Energy = int.Parse(Console.ReadLine());
+                            Console.Clear();
+                            catchFlag = false;
+                        }
+                        catch (Exception ex)
+                        {
+                            catchFlag = true;
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("That's not a number");
+                            Console.ResetColor();
+                        }
+                    }
+                    Console.WriteLine("Now set its conquest value");
+                    catchFlag =  true;
+                    while (catchFlag)
+                    {
+                        try
+                        {
+                            temp.Conquest = int.Parse(Console.ReadLine());
+                            Console.Clear();
+                            catchFlag = false;
+                        }
+                        catch (Exception ex)
+                        {
+                            catchFlag = true;
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("That's not a number");
+                            Console.ResetColor();
+                        }
+                    }
+                    Console.WriteLine("Now it only rest the effect. How many effects do your new card has?");
+                    int tempo = int.Parse(Console.ReadLine());
+                    List<Token> tokens = new List<Token>();
+                    for (int i = 0; i < tempo; i++)
+                    {
+                        Console.WriteLine($"Write the effect number {ReadANumber(i+1)}");
+                        string effectText = Console.ReadLine();
+                        List<Token> tempTokenList = Parse.Parsing(effectText);
+
+                        foreach (Token token in tempTokenList)
+                        {
+                            tokens.Add(token);
+                        }
+                    }
+                    Console.Clear();
+                    Effect tempEffect = new Effect(tokens);
+                    temp.Effecto = tempEffect;
+                    Console.WriteLine("Congratz your card has been created");
+                    ConsoleApp.PrintCard(temp);
+
+                    dataset.cardsDataSet.Add(temp);
+                    SerializeCardJsonFile(dataset.cardsDataSet);
+
+                    #endregion
+
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
                     Menu.ExitGame();
                     break;
             }
@@ -504,13 +542,23 @@ namespace War_Game
                 else return one.NickName;
             }
         }
-        #region WrittingJson
-        public static List<Card> GetCards ()
+        #region Serializing Json
+        public static List<Card> GetCards()
         {
             List<Card> cardList = new List<Card>();
             Effect newEffect = new Effect();
+            List<Token> tokenList = new List<Token>();
+            Token token1 = new Token("boolean", "true");
+            tokenList.Add(token1);
+            Token token2 = new Token("keyword", ":");
+            tokenList.Add(token2);
+            Token token3 = new Token("value", "empty");
+            tokenList.Add(token3);
+            Token token4 = new Token("keyword", ";");
+            tokenList.Add(token4);
+            Effect effect1 = new Effect(tokenList);
 
-            Card Hestia = new Card("Hestia", 3, 3, newEffect);
+            Card Hestia = new Card("Hestia", 3, 3, effect1);
             cardList.Add(Hestia);
             Card Atenea = new Card("Atenea", 4, 5, newEffect);
             cardList.Add(Atenea);
@@ -542,51 +590,116 @@ namespace War_Game
             cardList.Add(Raijin);
             Card Amateratsu = new Card("Amateratsu", 2, 4, newEffect);
             cardList.Add(Amateratsu);
-            Card Susanoo = new Card("Susanoo", 6, 9, newEffect);
+            Card Susanoo = new Card("Susanoo", 6, 9, effect1);
             cardList.Add(Susanoo);
 
             return cardList;
         }
 
-        public static List <Deck> GetDecks ()
+        public static List<Deck> GetDecks()
         {
-            List <Deck> deckList = new List<Deck>();
-            
+            List<Deck> deckList = new List<Deck>();
+
             return deckList;
         }
 
-        public static void SerializeCardJsonFile (List <Card> cardList)
+        public static void SerializeCardJsonFile(List<Card> cardList)
         {
             string cardJson = JsonConvert.SerializeObject(cardList.ToArray(), Formatting.Indented);
 
             File.WriteAllText(cardsPath, cardJson);
         }
 
-        public static void SerializeDeckJsonFile (List <Deck> deckList)
+        public static void SerializeDeckJsonFile(List<Deck> deckList)
         {
             string deckJson = JsonConvert.SerializeObject(deckList.ToArray(), Formatting.Indented);
 
-            File.WriteAllText(deckJson, decksPath);
+            File.WriteAllText(decksPath, deckJson);
         }
         #endregion
 
-        #region ReadingJson 
+        #region Deserializing Json 
         public static string GetCardsJsonFromFile()
         {
             string cardJsonFromFile;
             using (var reader = new StreamReader(cardsPath))
             {
-                cardJsonFromFile = reader.ReadToEnd(); 
+                cardJsonFromFile = reader.ReadToEnd();
             }
 
             return cardJsonFromFile;
         }
+        public static string GetDecksJsonFromFile()
+        {
+            string deckJsonFromFile;
+            using (var reader = new StreamReader(decksPath))
+            {
+                deckJsonFromFile = reader.ReadToEnd();
+            }
 
-        public static List<Card> DeserializeJsonFile (string cardJasonFromFile)
+            return deckJsonFromFile;
+        }
+
+        public static List<Card> DeserializeCardsJsonFile(string cardJasonFromFile)
         {
             List<Card> cardList = JsonConvert.DeserializeObject<List<Card>>(cardJasonFromFile);
 
             return cardList;
+        }
+
+        public static List<Deck> DeserializeDecksJsonFile(string deckJasonFromFile)
+        {
+            List<Deck> deckList = JsonConvert.DeserializeObject<List<Deck>>(deckJasonFromFile);
+
+            return deckList;
+        }
+        #endregion
+
+        #region Don't look at this, it's lame :/
+        public static string ReadANumber(int num)
+        {
+            if (num == 1)
+            {
+                return "one";
+            }
+            if (num == 2)
+            {
+                return "two";
+            }
+            if (num == 3)
+            {
+                return "three";
+            }
+            if (num == 4)
+            {
+                return "four";
+            }
+            if (num == 5)
+            {
+                return "five";
+            }
+            if (num == 6)
+            {
+                return "six";
+            }
+            if (num == 7)
+            {
+                return "seve";
+            }
+            if (num == 8)
+            {
+                return "eight";
+            }
+            if (num == 9)
+            {
+                return "nine";
+            }
+            if (num == 10)
+            {
+                return "ten";
+            }
+
+            return "n";
         }
         #endregion
     }

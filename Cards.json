@@ -3,102 +3,219 @@
     "cardName": "Hestia",
     "Energy": 3,
     "Conquest": 3,
-    "Effecto": {}
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "keyword",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "empty",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "keyword",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
   },
   {
     "cardName": "Atenea",
     "Energy": 4,
     "Conquest": 5,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Demeter",
     "Energy": 2,
     "Conquest": 3,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Ares",
     "Energy": 6,
     "Conquest": 12,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Hefesto",
     "Energy": 4,
     "Conquest": 5,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Afrodita",
     "Energy": 3,
     "Conquest": 3,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Artemisa",
     "Energy": 1,
     "Conquest": 1,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Poseidon",
     "Energy": 4,
     "Conquest": 6,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Apolo",
     "Energy": 2,
     "Conquest": 2,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Zeus",
     "Energy": 5,
     "Conquest": 9,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Hermes",
     "Energy": 1,
     "Conquest": 2,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Hera",
     "Energy": 3,
     "Conquest": 4,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Dioniso",
     "Energy": 1,
     "Conquest": 1,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Hades",
     "Energy": 6,
     "Conquest": 10,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Raijin",
     "Energy": 3,
     "Conquest": 5,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Amateratsu",
     "Energy": 2,
     "Conquest": 4,
-    "Effecto": {}
+    "Effecto": {
+      "effect": []
+    }
   },
   {
     "cardName": "Susanoo",
     "Energy": 6,
     "Conquest": 9,
-    "Effecto": {}
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "keyword",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "empty",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "keyword",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Hercules",
+    "Energy": 5,
+    "Conquest": 9,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "empty",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
   }
 ]

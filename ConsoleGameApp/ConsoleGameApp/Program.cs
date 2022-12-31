@@ -494,6 +494,56 @@ namespace War_Game
                     break;
 
                 case 3:
+                    #region Deck Creation
+                    Console.Clear();
+                    Console.WriteLine("Welcome to deck creation.");
+                    Console.WriteLine("Make sure you have read already the about seccion about how to play and how to create decks");
+
+                    string promptDeckCreation = @"Choose the way you want to create the deck";
+
+                    string[] deckOptions = { "Create by cards names", "Create by choosing cards" };
+                    Menu deckCreationMenu = new Menu(promptDeckCreation, deckOptions);
+                    int selectedIndexDC = deckCreationMenu.Run();
+
+                    switch (selectedIndexDC)
+                    {
+                        case 0:
+                            Console.Clear();
+                            Console.WriteLine("Type the name of your deck");
+                            string deckName = Console.ReadLine();
+                            Deck newDeck = new Deck();
+                            newDeck.DeckName = deckName;
+                            Console.Clear();
+                            Console.WriteLine("Now let's add the cards");
+
+                            for (int i = 0; i < 12; i++)
+                            {
+                                Console.WriteLine($"Add the card number {ReadANumber(i+1)} by typing it's name");
+                                string cardName = Console.ReadLine();
+                                Card card = dataset.GetACard(cardName);
+                                newDeck.cards.Add(card);
+                            }
+
+                            Console.Clear();
+
+                            if (newDeck.Validator())
+                            {
+                                Console.WriteLine($"Your deck have been createad susscefully, here is your deck ID: {newDeck.GetDeckID()}");
+                                dataset.deckDataSet.Add(newDeck);
+                                SerializeDeckJsonFile(dataset.deckDataSet);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Something went wrong, you didn't make a valid deck.");
+                            }
+                            break;
+
+                        
+                        case 1:
+                            break;
+                    }
+
+#endregion
                     break;
 
                 case 4:
@@ -707,6 +757,15 @@ namespace War_Game
             {
                 return "ten";
             }
+            if (num == 11)
+            {
+                return "eleven";
+            }
+            if (num == 12)
+            {
+                return "twelve";
+            }
+
 
             return "n";
         }

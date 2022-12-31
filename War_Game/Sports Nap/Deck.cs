@@ -10,7 +10,7 @@ namespace War_Game
     {
         public string DeckName;
         public List<Card> cards = new List<Card>();
-        public static int DeckID = 0;
+        static int DeckID = 0;
         public Deck()
         {
             DeckID++;
@@ -64,6 +64,11 @@ namespace War_Game
             }
 
             return true;
+        }
+
+        public int GetDeckID()
+        {
+            return DeckID;
         }
     }
 }

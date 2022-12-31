@@ -217,5 +217,38 @@
         }
       ]
     }
+  },
+  {
+    "cardName": "Ra",
+    "Energy": 3,
+    "Conquest": 3,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "empty",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
   }
 ]

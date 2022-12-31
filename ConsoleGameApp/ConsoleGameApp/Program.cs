@@ -29,6 +29,8 @@ namespace War_Game
 
             SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
             typingSound.Load();
+            SoundPlayer backgroundMusic = new SoundPlayer("Pirates of the Caribbean theme.wav");
+            backgroundMusic.Load();
 
             #region FirstMenuOption
 
@@ -276,6 +278,8 @@ namespace War_Game
 
                             while (turn <= 6)
                             {
+                                backgroundMusic.PlayLooping();
+
                                 P1.Energy = turn;
                                 P2.Energy = turn;
 
@@ -309,6 +313,7 @@ namespace War_Game
                                 turn++;
                             }
 
+                            backgroundMusic.Stop();
                             Console.Clear();
                             Console.WriteLine(@"
 
@@ -349,6 +354,8 @@ namespace War_Game
 
                             while (turn <= 6)
                             {
+                                backgroundMusic.PlayLooping();
+
                                 P3.Energy = turn;
                                 DiazcaBot.Energy = turn;
 
@@ -388,6 +395,8 @@ namespace War_Game
 
                                 turn++;
                             }
+
+                            backgroundMusic.Stop();
 
                             Console.Clear();
                             Console.WriteLine(@"

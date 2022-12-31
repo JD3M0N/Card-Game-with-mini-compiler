@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Pirates of the Caribbean theme.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="typewriter-2.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

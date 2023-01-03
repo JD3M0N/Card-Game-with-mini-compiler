@@ -76,12 +76,26 @@ namespace War_Game
                     break;
                 case "terrain.opponent.cardsamount":
                     {
-                        //fix
+                        this.Type = "number";
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (P1.Terrains[i].CardsPlayed.Contains (card))
+                            {
+                                this.value = P2.Terrains[i].CardsPlayed.Count();
+                            }
+                        }
                     }
                     break;
                 case "terrain.opponent.conquest":
                     {
-                        //fix
+                        this.Type = "number";
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (P1.Terrains[i].CardsPlayed.Contains(card))
+                            {
+                                this.value = P2.Terrains[i].Conquest;
+                            }
+                        }
                     }
                     break;
                 case "topterrain.name":

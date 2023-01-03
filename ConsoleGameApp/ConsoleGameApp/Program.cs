@@ -122,7 +122,11 @@ namespace War_Game
                             P2Deck.Shuffled();
                             Player P2 = new Player(nickNamePlayer2, P2Deck);
 
-
+                            for (int i = 0; i < 3; i++)
+                            {
+                                P1.DrawACard();
+                                P2.DrawACard();
+                            }
 
                             int turn = 1;
                             string cont1nue = "";
@@ -200,6 +204,12 @@ namespace War_Game
                             Player P3 = new Player(nickNamePlayer1, dataset.GetDeckByID(deckID));
                             P3.PlayerDeck.Shuffled();
 
+                            for (int i = 0; i < 3; i++)
+                            {
+                                P3.DrawACard();
+                                DiazcaBot.DrawACard();
+                            }
+
                             turn = 1;
                             cont1nue = "";
 
@@ -238,7 +248,6 @@ namespace War_Game
                                     if (tempCard != null)
                                     {
                                         ConsoleApp.PlayACard(DiazcaBot, tempCard, DiazcaBot.TerrainToPlay(P3));
-                                        DiazcaBot.CardsInHand.Remove(tempCard);
                                     }
                                 }
 

@@ -853,5 +853,515 @@
         }
       ]
     }
+  },
+  {
+    "cardName": "Heimdall",
+    "Energy": 2,
+    "Conquest": 5,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "symbol",
+          "Description": "[",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "10",
+          "value": 10,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "opponent.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "]",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "lowerthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "[",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "12",
+          "value": 12,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "opponent.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "+",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "1",
+          "value": 1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "]",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "and",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "move.right",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Hela",
+    "Energy": 3,
+    "Conquest": 4,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "symbol",
+          "Description": "[",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "10",
+          "value": 10,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "player.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "+",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "1",
+          "value": 1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "1",
+          "value": 1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "]",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "loweriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "destroy",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Njordr",
+    "Energy": 4,
+    "Conquest": 6,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "player.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "loweriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "opponent.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "or",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "player.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "greateriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "opponent.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "move.left",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Bjorn",
+    "Energy": 2,
+    "Conquest": 3,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "symbol",
+          "Description": "[",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "10",
+          "value": 10,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "*",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "4",
+          "value": 4,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "+",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "5",
+          "value": 5,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "8",
+          "value": 8,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "-",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "7",
+          "value": 7,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "+",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "*",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "]",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "lowerthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "100",
+          "value": 100,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "move.center",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
   }
 ]

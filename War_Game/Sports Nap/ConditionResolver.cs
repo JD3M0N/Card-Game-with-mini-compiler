@@ -25,7 +25,7 @@ namespace War_Game
                 if (tokenList[i].Description == "]")
                 {
                     Token resultToken = Shunting_Yard(tokenList.GetRange(FirstIndex+1, i-FirstIndex+1));
-                    tokenList.RemoveRange(FirstIndex, i-FirstIndex); // debug
+                    tokenList.RemoveRange(FirstIndex, i-FirstIndex+1); // debug
                     tokenList.Insert(FirstIndex, resultToken);
                 }
             }
@@ -39,7 +39,7 @@ namespace War_Game
                     newList.Add(tokenList[i+1]);
                     newList.Add(tokenList[i+2]);
                     bool tempComp = EatComparation(newList);
-                    tokenList.RemoveRange(i, i+2);
+                    tokenList.RemoveRange(i, 3);
                     tokenList.Insert(i, new Token("boolean", tempComp.ToString()));
                 }
             }
@@ -48,7 +48,7 @@ namespace War_Game
                 if (tokenList[i].Type.Equals("name"))
                 {
                     bool tempComp = EatName(tokenList[i], tokenList[i+2]);
-                    tokenList.RemoveRange(i, i+2);
+                    tokenList.RemoveRange(i, 3);
                     tokenList.Insert(i, new Token("boolean", tempComp.ToString()));
                 }
             }
@@ -68,13 +68,13 @@ namespace War_Game
                     if (tokenList[j].Description == ")")
                     {
                         bool temp = CalculateExpresion(tokenList.GetRange(lasIndexOf, j));
-                        tokenList.RemoveRange(lasIndexOf, j);
+                        tokenList.RemoveRange(lasIndexOf, j - lasIndexOf);
                         tokenList.Insert(lasIndexOf, new Token("boolean", temp.ToString()));
                     }
                 }
             }
 
-            if (tokenList[0].Description == "true")
+            if (tokenList[0].Description.ToLower() == "true")
             {
                 return true;
             }
@@ -239,19 +239,33 @@ namespace War_Game
             }
             if (effect == "powerup")
             {
-                Language.PowerUp(card, tokenList[1].value);
+                Language.PowerUp(card, tokenList[1].value, P1.Terrains[CardPLayed(card, P1)]);
             }
             if (effect == "powerdown")
             {
-                Language.PowerDown(card, tokenList[1].value);
+                Language.PowerDown(card, tokenList[1].value, P1.Terrains[CardPLayed(card, P1)]);
             }
             if (effect == "empty")
             {
                 Language.Empty();
             }
-            if (effect == "")
+            if (effect == "move.right")
             {
-
+                if (CardPLayed(card, P1) != 2)
+                {
+                    Language.MoveACard(P1, CardPLayed(card, P1), (CardPLayed(card, P1) + 1), card);
+                }
+            }
+            if (effect == "move.left")
+            {
+                if (CardPLayed(card, P1) != 0)
+                {
+                    Language.MoveACard(P1, CardPLayed(card, P1), (CardPLayed(card, P1) - 1), card);
+                }
+            }
+            if (effect == "move.center")
+            {
+                Language.MoveACard(P1, CardPLayed(card, P1), 1, card);
             }
         }
 
@@ -288,6 +302,11 @@ namespace War_Game
                 }
                 if (currentToken.Description == "+" || currentToken.Description == "-")
                 {
+                    if (stack.Count() == 0)
+                    {
+                        stack.Push(currentToken);
+                        continue;
+                    }
                     while (stack.Peek().Description == "*")
                     {
                         Token tempToken = stack.Pop();
@@ -364,6 +383,21 @@ namespace War_Game
                 }
             }
             return false;
+        }
+
+        public static int CardPLayed (Card card, Player p)
+        {
+            int terrainIndex = -1;
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (p.Terrains[i].CardsPlayed.Contains(card))
+                {
+                    terrainIndex = i;
+                }
+            }
+
+            return terrainIndex;
         }
     }
 }

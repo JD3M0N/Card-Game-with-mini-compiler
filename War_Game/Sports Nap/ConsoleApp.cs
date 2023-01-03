@@ -311,16 +311,15 @@ namespace War_Game
                     Console.WriteLine("Choose another terrain to play your card");
                     imputTerrain = int.Parse(Console.ReadLine()) - 1;
                 }
-
+                Card carto = P.CardsInHand[imputCard];
                 PlayACard(P, P.CardsInHand[imputCard], imputTerrain);
-                P.CardsInHand[imputCard].Effecto.GetValues(P, P2, turn, P.CardsInHand[imputCard]);
+                carto.Effecto.GetValues(P, P2, turn, carto);
 
                 //If card condition is true, let's play it
-                if (ConditionResolver.ResolveCondition(Parse.GetCondition(P.CardsInHand[imputCard].Effecto.effect)))
+                if (ConditionResolver.ResolveCondition(Parse.GetCondition(carto.Effecto.effect)))
                 {
-                    ConditionResolver.EffectResolver(Parse.GetEffect(P.CardsInHand[imputCard].Effecto.effect), P, P2, turn, P.CardsInHand[imputCard]);
+                    ConditionResolver.EffectResolver(Parse.GetEffect(carto.Effecto.effect), P, P2, turn, carto);
                 }
-                P.CardsInHand.RemoveAt(imputCard);
             }
             else
             {
@@ -334,7 +333,7 @@ namespace War_Game
             player.Energy -= cardPlayed.Energy;
             player.Terrains[indexTerrain].CardsPlayed.Add(cardPlayed);
             player.Terrains[indexTerrain].Conquest += cardPlayed.Conquest;
-            //player.CardsInHand.Remove(cardPlayed);
+            player.CardsInHand.Remove(cardPlayed);
         }
 
         public static void PrintCardsOptions (List <string> cardList)
@@ -345,6 +344,25 @@ namespace War_Game
             {
                 Console.WriteLine($"{cardCount} : {card}");
                 cardCount++;
+            }
+        }
+
+        public static void UpdateConquest (Player p1, Player p2)
+        {
+            
+            for (int i = 0; i < 3; i++)
+            {
+                p1.Terrains[i].Conquest = 0;
+                p2.Terrains[i].Conquest = 0;
+
+                foreach (Card card in p1.Terrains[i].CardsPlayed)
+                {
+                    p1.Terrains[i].Conquest += card.Conquest;
+                }
+                foreach (Card card in p2.Terrains[i].CardsPlayed)
+                {
+                    p2.Terrains[i].Conquest += card.Conquest;
+                }
             }
         }
     }

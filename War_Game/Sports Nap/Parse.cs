@@ -98,7 +98,7 @@ namespace War_Game
                 }
                 if (tokenList[i].Description == ";")
                 {
-                    return tokenList.GetRange(index +1, i -1);
+                    return tokenList.GetRange(index +1, i - (index +1));
                 }
             }
 

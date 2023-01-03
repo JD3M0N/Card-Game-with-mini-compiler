@@ -55,8 +55,17 @@ namespace War_Game
 
         public static void MoveACard(Player p, int start, int end, Card card)
         {
+            if (start == end)
+            {
+                Console.WriteLine($"{card.cardName} couldn't be move");
+                return;
+            }
             p.Terrains[start].CardsPlayed.Remove(card);
+            p.Terrains[start].Conquest -= card.Conquest;
             p.Terrains[end].CardsPlayed.Add(card);
+            p.Terrains[end].Conquest += card.Conquest;
+
+            Console.WriteLine($"{card.cardName} was moved from terrain: {start + 1} to terrain {end + 1}");
         }
 
         public static void DiscardACard(Player p)
@@ -69,16 +78,18 @@ namespace War_Game
             Console.WriteLine($"{discarded.cardName} was descarted from {p.NickName}'s hand");
         }
 
-        public static void PowerUp(Card card, int power)
+        public static void PowerUp(Card card, int power, Terrain t)
         {
             card.Conquest += power;
+            t.Conquest += power;
 
             Console.WriteLine($"{card.cardName} was upgraded by {power} conquest points");
         }
 
-        public static void PowerDown(Card card, int power)
+        public static void PowerDown(Card card, int power, Terrain t)
         {
             card.Conquest -= power;
+            t.Conquest -= power;
 
             Console.WriteLine($"{card.cardName} was degraded by {power} conquest points");
         }

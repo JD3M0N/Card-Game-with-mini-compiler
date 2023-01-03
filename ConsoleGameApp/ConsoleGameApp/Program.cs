@@ -149,11 +149,11 @@ namespace War_Game
 
                                 while (!P1.EndTurn)
                                 {
-                                    ConsoleApp.ItsYourTurn(P1, P2);
+                                    ConsoleApp.ItsYourTurn(P1, P2, turn);
                                 }
                                 while (!P2.EndTurn)
                                 {
-                                    ConsoleApp.ItsYourTurn(P2, P1);
+                                    ConsoleApp.ItsYourTurn(P2, P1, turn);
                                 }
 
                                 P1.EndTurn = false;
@@ -228,7 +228,7 @@ namespace War_Game
 
                                 while (!P3.EndTurn)
                                 {
-                                    ConsoleApp.ItsYourTurn(P3, DiazcaBot);
+                                    ConsoleApp.ItsYourTurn(P3, DiazcaBot, turn);
                                 }
                                 while (!DiazcaBot.EndTurn)
                                 {
@@ -238,6 +238,7 @@ namespace War_Game
                                     if (tempCard != null)
                                     {
                                         ConsoleApp.PlayACard(DiazcaBot, tempCard, DiazcaBot.TerrainToPlay(P3));
+                                        DiazcaBot.CardsInHand.Remove(tempCard);
                                     }
                                 }
 
@@ -320,20 +321,16 @@ namespace War_Game
                             Console.ResetColor();
                         }
                     }
-                    Console.WriteLine("Now it only rest the effect. How many effects do your new card has?");
-                    int tempo = int.Parse(Console.ReadLine());
                     List<Token> tokens = new List<Token>();
-                    for (int i = 0; i < tempo; i++)
-                    {
-                        Console.WriteLine($"Write the effect number {ReadANumber(i+1)}");
-                        string effectText = Console.ReadLine();
-                        List<Token> tempTokenList = Parse.Parsing(effectText);
+                    Console.WriteLine($"Write the effect of your card");
+                    string effectText = Console.ReadLine();
+                    List<Token> tempTokenList = Parse.Parsing(effectText);
 
-                        foreach (Token token in tempTokenList)
-                        {
-                            tokens.Add(token);
-                        }
+                    foreach (Token token in tempTokenList)
+                    {
+                        tokens.Add(token);
                     }
+
                     Console.Clear();
                     Effect tempEffect = new Effect(tokens);
                     temp.Effecto = tempEffect;
@@ -435,7 +432,7 @@ namespace War_Game
                                     answer = Console.ReadLine();
                                     Card newCard = dataset.GetACard(cardOption[int.Parse(answer) - 1]);
                                     Console.Clear();
-                                    ConsoleApp.PrintCard(newCard);
+                                    ConsoleApp.PrintCard(newCard, true);
                                     Console.WriteLine();
                                     Console.WriteLine("Do you want to add that card?, type y to add it");
                                     answer = Console.ReadLine();

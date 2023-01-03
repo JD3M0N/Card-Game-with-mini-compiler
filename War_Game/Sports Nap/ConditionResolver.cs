@@ -45,7 +45,7 @@ namespace War_Game
             }
             for (int i = 0; i < tokenList.Count; i++)
             {
-                if (!tokenList[i].Type.Equals("name"))
+                if (tokenList[i].Type.Equals("name"))
                 {
                     bool tempComp = EatName(tokenList[i], tokenList[i+2]);
                     tokenList.RemoveRange(i, i+2);
@@ -233,21 +233,21 @@ namespace War_Game
 
                 Language.DestroyCards(P2, terrainIndex, cardsToDestroy);
             }
-            if (effect == "")
+            if (effect == "discard")
             {
-
+                Language.DiscardACard(P2);
             }
-            if (effect == "")
+            if (effect == "powerup")
             {
-
+                Language.PowerUp(card, tokenList[1].value);
             }
-            if (effect == "")
+            if (effect == "powerdown")
             {
-
+                Language.PowerDown(card, tokenList[1].value);
             }
-            if (effect == "")
+            if (effect == "empty")
             {
-
+                Language.Empty();
             }
             if (effect == "")
             {
@@ -370,3 +370,4 @@ namespace War_Game
 
 // Debug Method
 //if por cada uno de los effectos
+// destruir cartas por terreno

@@ -79,7 +79,7 @@ namespace War_Game
             {
                 if (tokenList[i].Description == ":")
                 {
-                    return tokenList.GetRange(0, i -1);
+                    return tokenList.GetRange(0, i);
                 }
             }
 

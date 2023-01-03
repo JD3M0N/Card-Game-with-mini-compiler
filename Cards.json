@@ -283,5 +283,575 @@
         }
       ]
     }
+  },
+  {
+    "cardName": "Odin",
+    "Energy": 6,
+    "Conquest": 10,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "terrain.opponent.cardsamount",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "greaterthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "destroycards",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Loki",
+    "Energy": 3,
+    "Conquest": 3,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "terrain.opponent.cardsamount",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "greaterthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "terrain.cardsamount",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "destroy",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Skadi",
+    "Energy": 2,
+    "Conquest": 3,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "opponent.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "greateriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "player.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "discard",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Frigg",
+    "Energy": 5,
+    "Conquest": 5,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "terrain.cardsamount",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "iqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "4",
+          "value": 4,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "7",
+          "value": 7,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Hel",
+    "Energy": 4,
+    "Conquest": 7,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "terrain.opponent.cardsamount",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "iqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "0",
+          "value": 0,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerdown",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "3",
+          "value": 3,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Balder",
+    "Energy": 1,
+    "Conquest": 2,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "centerterrain.conquest",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "greaterthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "0",
+          "value": 0,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Freya",
+    "Energy": 1,
+    "Conquest": 2,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "player.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "greateriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "6",
+          "value": 6,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Freya",
+    "Energy": 1,
+    "Conquest": 2,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "player.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "greateriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "6",
+          "value": 6,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Balder",
+    "Energy": 1,
+    "Conquest": 2,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "centerterrain.conquest",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "greaterthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "0",
+          "value": 0,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Bragi",
+    "Energy": 1,
+    "Conquest": 3,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "opponent.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "greateriqualof",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "player.cardsindeck",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "discard",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Tyr",
+    "Energy": 1,
+    "Conquest": 1,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "destroy",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Idunn",
+    "Energy": 1,
+    "Conquest": 1,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "discard",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
   }
 ]

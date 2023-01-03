@@ -37,7 +37,7 @@ namespace War_Game
             Random rand = new Random();
             List<Card> list = new List<Card>();
 
-            for (int i = 0; i < cards.Count; i++)
+            while (cards.Count() != 0)
             {
                 int cardRandIndex = rand.Next(0, cards.Count);
                 list.Add(cards[cardRandIndex]);

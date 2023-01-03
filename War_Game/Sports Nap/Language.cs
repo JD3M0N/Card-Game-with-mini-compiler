@@ -82,5 +82,10 @@ namespace War_Game
 
             Console.WriteLine($"{card.cardName} was degraded by {power} conquest points");
         }
+
+        public static void Empty ()
+        {
+
+        }
     }
 }

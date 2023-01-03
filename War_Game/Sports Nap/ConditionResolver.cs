@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,26 @@ namespace War_Game
 {
     public class ConditionResolver
     {
-        public bool ResolveCondition(List<Token> tokenList)
+
+        #region Condition Resolver
+        public static bool ResolveCondition(List<Token> tokenList)
         {
             //GetValues needs to be updated 
+            int FirstIndex = 0;
+
+            for (int i = 0; i < tokenList.Count; i++)
+            {
+                if (tokenList[i].Description == "[")
+                {
+                    FirstIndex = i;
+                }
+                if (tokenList[i].Description == "]")
+                {
+                    Token resultToken = Shunting_Yard(tokenList.GetRange(FirstIndex+1, i-FirstIndex+1));
+                    tokenList.RemoveRange(FirstIndex, i-FirstIndex); // debug
+                    tokenList.Insert(FirstIndex, resultToken);
+                }
+            }
 
             for (int i = 0; i < tokenList.Count; i++)
             {
@@ -63,7 +81,7 @@ namespace War_Game
             return false;
         }
 
-        public bool EatComparation(List<Token> tokenList)
+        public static bool EatComparation(List<Token> tokenList)
         {
             if (tokenList[1].Description == "lowerthan")
             {
@@ -89,7 +107,7 @@ namespace War_Game
             return false;
         }
 
-        public bool EatName(Token a, Token b)
+        public static bool EatName(Token a, Token b)
         {
             if (a.nameValue == b.nameValue)
             {
@@ -98,7 +116,7 @@ namespace War_Game
             return false;
         }
 
-        public bool CalculateExpresion (List<Token> tokenList)
+        public static bool CalculateExpresion(List<Token> tokenList)
         {
             if (tokenList.Count == 3)
             {
@@ -144,12 +162,211 @@ namespace War_Game
             return false;
         }
 
-        public void UpdateTokensValues(List<Token> tokenList, Player P1, Player P2, int turn, Card card)
+        #endregion
+        public static void UpdateTokensValues(List<Token> tokenList, Player P1, Player P2, int turn, Card card)
         {
             foreach (Token token in tokenList)
             {
                 token.GetValue(P1, P2, turn, card);
             }
         }
+
+        public static void EffectResolver (List<Token> tokenList, Player P1, Player P2, int turn, Card card)
+        {
+            if (AritmeticsExpresions(tokenList))
+            {
+                int FirstIndex = 0;
+
+                for (int i = 0; i < tokenList.Count; i++)
+                {
+                    if (tokenList[i].Description == "[")
+                    {
+                        FirstIndex = i;
+                    }
+                    if (tokenList[i].Description == "]")
+                    {
+                        Token resultToken = Shunting_Yard(tokenList.GetRange(FirstIndex+1, i-FirstIndex+1));
+                        tokenList.RemoveRange(FirstIndex, i-FirstIndex); // debug
+                        tokenList.Insert(FirstIndex, resultToken);
+                    }
+                }
+            }
+
+            string effect = tokenList[0].Description;
+
+            if (effect == "destroy")
+            {
+                int terrainIndex = -1;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    if (P1.Terrains[i].CardsPlayed.Contains(card))
+                    {
+                        terrainIndex = i;
+                    }
+                }
+
+                Language.DestroyACard(P2, terrainIndex);
+            }
+            if (effect == "destroycards")
+            {
+                int terrainIndex = -1;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    if (P1.Terrains[i].CardsPlayed.Contains(card))
+                    {
+                        terrainIndex = i;
+                    }
+                }
+
+                int cardsToDestroy = 0;
+
+                try
+                {
+                    cardsToDestroy = tokenList[1].value;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Not valid effect. Espected a number of cards to destroy");
+                }
+
+                Language.DestroyCards(P2, terrainIndex, cardsToDestroy);
+            }
+            if (effect == "")
+            {
+
+            }
+            if (effect == "")
+            {
+
+            }
+            if (effect == "")
+            {
+
+            }
+            if (effect == "")
+            {
+
+            }
+            if (effect == "")
+            {
+
+            }
+        }
+
+        #region Shunting Yard
+        public static Token Shunting_Yard(List<Token> tokenlist)
+        {
+            Queue<Token> queue = new Queue<Token>();
+            Stack<Token> stack = new Stack<Token>();
+
+            while (stack.Count() != 0 || tokenlist.Count() != 0)
+            {
+                if (tokenlist.Count() == 0)
+                {
+                    while (stack.Count() != 0)
+                    {
+                        Token tempToken = stack.Pop();
+                        queue.Enqueue(tempToken);
+                    }
+                    break;
+                }
+
+                Token currentToken = tokenlist[0];
+                tokenlist.RemoveAt(0);
+
+                if (currentToken.Type == "number")
+                {
+                    queue.Enqueue(currentToken);
+                    continue;
+                }
+                if (currentToken.Description == "(" || currentToken.Description == "*")
+                {
+                    stack.Push(currentToken);
+                    continue;
+                }
+                if (currentToken.Description == "+" || currentToken.Description == "-")
+                {
+                    while (stack.Peek().Description == "*")
+                    {
+                        Token tempToken = stack.Pop();
+                        queue.Enqueue(tempToken);
+                        stack.Push(currentToken);
+                    }
+                    continue;
+                }
+                if (currentToken.Description == ")")
+                {
+                    while (stack.Peek().Description != "(")
+                    {
+                        Token tempToken = stack.Pop();
+                        queue.Enqueue(tempToken);
+                    }
+                    stack.Pop();
+                    continue;
+                }
+            }
+
+            return QueueResolver(queue);
+        }
+
+        public static Token QueueResolver(Queue<Token> tokenQueue)
+        {
+            Stack <Token> stack = new Stack <Token>();
+
+            while (tokenQueue.Count() != 0)
+            {
+                Token tempToken = tokenQueue.Dequeue();
+
+                if (tempToken.Type == "number")
+                {
+                    stack.Push(tempToken);
+                }
+                if (tempToken.Description == "*")
+                {
+                    int b = stack.Pop().value;
+                    int a = stack.Pop().value;
+
+                    Token newToken = new Token("number", (a*b).ToString(), (a*b));
+                    stack.Push(newToken);
+                }
+                if (tempToken.Description == "+")
+                {
+                    int b = stack.Pop().value;
+                    int a = stack.Pop().value;
+
+                    Token newToken = new Token("number", (a+b).ToString(), (a+b));
+                    stack.Push(newToken);
+                }
+                if (tempToken.Description == "-")
+                {
+                    int b = stack.Pop().value;
+                    int a = stack.Pop().value;
+
+                    Token newToken = new Token("number", (a-b).ToString(), (a-b));
+                    stack.Push(newToken);
+                }
+            }
+
+            return stack.Pop();
+        }
+
+        #endregion
+
+        public static bool AritmeticsExpresions (List <Token> tokenList)
+        {
+            foreach (Token token in tokenList)
+            {
+                if (token.Description == "[" || token.Description == "]")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
+
+// Debug Method
+//if por cada uno de los effectos

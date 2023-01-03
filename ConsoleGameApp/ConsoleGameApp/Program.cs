@@ -18,13 +18,15 @@ namespace War_Game
 
             //List <Card> cardList = GetCards();
             //SerializeCardJsonFile(cardList);
-
+            //List<Deck> deckList = new List<Deck>();
+            //SerializeDeckJsonFile(deckList);
 
             string jsonCards = GetCardsJsonFromFile();
             string jsonDeck = GetDecksJsonFromFile();
             DataSet dataset = new DataSet();
             dataset.cardsDataSet = DeserializeCardsJsonFile(jsonCards);
             dataset.deckDataSet = DeserializeDecksJsonFile(jsonDeck);
+            dataset.GetDataSetID();
             #endregion
 
             SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
@@ -71,206 +73,56 @@ namespace War_Game
                             Console.Clear();
 
                             typingSound.PlayLooping();
-                            ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 50);  // (C-APK)
-                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);  // (C-APK)
+                            ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 50);
+                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
                             typingSound.Stop();
-                            string nickNamePlayer1 = Console.ReadLine();           //Console APK (C-APK)
-                            Deck P1Deck = new Deck();
+                            string nickNamePlayer1 = Console.ReadLine();
+
+                            Console.WriteLine($"Now {nickNamePlayer1} insert your deck ID");
+                            string deckP1 = Console.ReadLine();
+                            int deckP1ID = 0;
+                            try
+                            {
+                                deckP1ID = int.Parse(deckP1);
+                            }
+                            catch (Exception ex)
+                            {
+                                throw new Exception("That's not a number");
+                            }
+                            Deck P1Deck = dataset.GetDeckByID(deckP1ID);
 
                             Console.Clear();
-
-                            string newPromptDeck = @"Choose the cards that you want to play with: 
-(press enter to add a card)
-(you cannot add the same card twice)";
-                            string[] cards = { "Zeus", "Hermes", "Hera", "Apolo", "Poseidon", "Artemisa", "Afrodita", "Hefesto", "Ares", "Demeter", "Atenea", "Hestia", "Dioniso", "Hades", "Raijin", "Amaterasu", "Tsuki-Yomi", "Susanoo", "Fujin", "Rayujin", "Tenjin", "Hachiman", "Inari", "Omoikane", "Saruta-Hiko", "Kagutsuchi" };
-
-
-
-                            Menu deckMenu = new Menu(newPromptDeck, cards);
-                            bool validator = false;
-
-                            #region CardDeckPlayersCreation
-                            while (!validator)
-                            {
-
-                                while (P1Deck.cards.Count() < (12))
-                                {
-                                    int deckMenuIndex = deckMenu.Run();
-
-                                    switch (deckMenuIndex)
-                                    {
-                                        case 0:
-                                            P1Deck.cards.Add(dataset.GetACard("Zeus"));
-                                            break;
-
-                                        case 1:
-                                            P1Deck.cards.Add(dataset.GetACard("Hermes"));
-                                            break;
-
-                                        case 2:
-                                            P1Deck.cards.Add(dataset.GetACard("Hera"));
-                                            break;
-
-                                        case 3:
-                                            P1Deck.cards.Add(dataset.GetACard("Apolo"));
-                                            break;
-
-                                        case 4:
-                                            P1Deck.cards.Add(dataset.GetACard("Poseidon"));
-                                            break;
-
-                                        case 5:
-                                            P1Deck.cards.Add(dataset.GetACard("Artemisa"));
-                                            break;
-
-                                        case 6:
-                                            P1Deck.cards.Add(dataset.GetACard("Afrodita"));
-                                            break;
-
-                                        case 7:
-                                            P1Deck.cards.Add(dataset.GetACard("Hefesto"));
-                                            break;
-
-                                        case 8:
-                                            P1Deck.cards.Add(dataset.GetACard("Ares"));
-                                            break;
-
-                                        case 9:
-                                            P1Deck.cards.Add(dataset.GetACard("Demeter"));
-                                            break;
-
-                                        case 10:
-                                            P1Deck.cards.Add(dataset.GetACard("Atenea"));
-                                            break;
-
-                                        case 11:
-                                            P1Deck.cards.Add(dataset.GetACard("Hestia"));
-                                            break;
-
-                                        case 12:
-                                            P1Deck.cards.Add(dataset.GetACard("Dionisio"));
-                                            break;
-
-                                        case 13:
-                                            P1Deck.cards.Add(dataset.GetACard("Hades"));
-                                            break;
-                                    }
-                                }
-
-                                if (P1Deck.Validator())
-                                {
-                                    validator = true;
-                                }
-                                if (!P1Deck.Validator())
-                                {
-                                    Console.Clear();
-                                    P1Deck.cards.Clear();
-                                    Console.WriteLine("Your deck have not the correct format, please make sure you have 12 cards, no more no less, and you don't have any card twice.");
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                }
-                            }
 
                             P1Deck.Shuffled();
                             Player P1 = new Player(nickNamePlayer1, P1Deck);
                             Console.Clear();
 
                             typingSound.PlayLooping();
-                            ConsoleApp.PrintAnimation("Insert nick name Player 2: ", 50);  // (C-APK)
-                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);  // (C-APK)
+                            ConsoleApp.PrintAnimation("Insert nick name Player 2: ", 50);
+                            ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
                             typingSound.Stop();
-                            string nickNamePlayer2 = Console.ReadLine();           //Console APK (C-APK)
+                            string nickNamePlayer2 = Console.ReadLine();
 
-                            Deck P2Deck = new Deck();
+                            Console.WriteLine($"Now {nickNamePlayer2} insert your deck ID");
+                            string deckP2 = Console.ReadLine();
+                            int deckP2ID = 0;
+                            try
+                            {
+                                deckP2ID = int.Parse(deckP2);
+                            }
+                            catch (Exception ex)
+                            {
+                                throw new Exception("That's not a number");
+                            }
+                            Deck P2Deck = dataset.GetDeckByID(deckP2ID);
 
                             Console.Clear();
 
-                            validator = false;
 
-                            while (!validator)
-                            {
-
-                                while (P2Deck.cards.Count() < (12))
-                                {
-                                    int deckMenuIndex = deckMenu.Run();
-
-                                    switch (deckMenuIndex)
-                                    {
-                                        case 0:
-                                            P2Deck.cards.Add(dataset.GetACard("Zeus"));
-                                            break;
-
-                                        case 1:
-                                            P2Deck.cards.Add(dataset.GetACard("Hermes"));
-                                            break;
-
-                                        case 2:
-                                            P2Deck.cards.Add(dataset.GetACard("Hera"));
-                                            break;
-
-                                        case 3:
-                                            P2Deck.cards.Add(dataset.GetACard("Apolo"));
-                                            break;
-
-                                        case 4:
-                                            P2Deck.cards.Add(dataset.GetACard("Poseidon"));
-                                            break;
-
-                                        case 5:
-                                            P2Deck.cards.Add(dataset.GetACard("Artemisa"));
-                                            break;
-
-                                        case 6:
-                                            P2Deck.cards.Add(dataset.GetACard("Afrodita"));
-                                            break;
-
-                                        case 7:
-                                            P2Deck.cards.Add(dataset.GetACard("Hefesto"));
-                                            break;
-
-                                        case 8:
-                                            P2Deck.cards.Add(dataset.GetACard("Ares"));
-                                            break;
-
-                                        case 9:
-                                            P2Deck.cards.Add(dataset.GetACard("Demeter"));
-                                            break;
-
-                                        case 10:
-                                            P2Deck.cards.Add(dataset.GetACard("Atenea"));
-                                            break;
-
-                                        case 11:
-                                            P2Deck.cards.Add(dataset.GetACard("Hestia"));
-                                            break;
-
-                                        case 12:
-                                            P2Deck.cards.Add(dataset.GetACard("Dionisio"));
-                                            break;
-
-                                        case 13:
-                                            P2Deck.cards.Add(dataset.GetACard("Hades"));
-                                            break;
-                                    }
-                                }
-
-                                if (P2Deck.Validator())
-                                {
-                                    validator = true;
-                                }
-                                if (!P2Deck.Validator())
-                                {
-                                    Console.Clear();
-                                    P2Deck.cards.Clear();
-                                    Console.WriteLine("Your deck have not the correct format, please make sure you have 12 cards, no more no less, and you don't have any card twice.");
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                }
-                            }
                             P2Deck.Shuffled();
                             Player P2 = new Player(nickNamePlayer2, P2Deck);
 
-                            #endregion
+
 
                             int turn = 1;
                             string cont1nue = "";
@@ -343,8 +195,9 @@ namespace War_Game
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
                             typingSound.Stop();
                             nickNamePlayer1 = Console.ReadLine();
-
-                            Player P3 = new Player(nickNamePlayer1, dataset.GetADeck("MydeckTexter"));
+                            Console.WriteLine($" {nickNamePlayer1} Imput your deck ID:");
+                            int deckID = int.Parse(Console.ReadLine());
+                            Player P3 = new Player(nickNamePlayer1, dataset.GetDeckByID(deckID));
                             P3.PlayerDeck.Shuffled();
 
                             turn = 1;
@@ -352,9 +205,10 @@ namespace War_Game
 
                             Card tempCard = new Card();
 
+                            backgroundMusic.PlayLooping();
+
                             while (turn <= 6)
                             {
-                                backgroundMusic.PlayLooping();
 
                                 P3.Energy = turn;
                                 DiazcaBot.Energy = turn;
@@ -511,7 +365,7 @@ namespace War_Game
                             Console.Clear();
                             Console.WriteLine("Type the name of your deck");
                             string deckName = Console.ReadLine();
-                            Deck newDeck = new Deck();
+                            Deck newDeck = new Deck(DeckIDGenerator(dataset));
                             newDeck.DeckName = deckName;
                             Console.Clear();
                             Console.WriteLine("Now let's add the cards");
@@ -538,12 +392,80 @@ namespace War_Game
                             }
                             break;
 
-                        
+
                         case 1:
+                            Console.Clear();
+                            Console.WriteLine("Type the name of your deck");
+                            string deckNamee = Console.ReadLine();
+                            Deck newDecke = new Deck(DeckIDGenerator(dataset));
+                            newDecke.DeckName = deckNamee;
+                            Console.Clear();
+                            List<string> cardOption = new List<string>();
+
+                            foreach (Card card in dataset.cardsDataSet)
+                            {
+                                cardOption.Add(card.cardName);
+                            }
+
+                            Console.WriteLine("These are all the cards!");
+                            Console.WriteLine("Type the number card to add to your deck, or type enter to get the info of a card");
+                            Console.WriteLine("Type anything to continue.");
+                            Console.ReadLine();
+
+                            int newDeckCounter = 0;
+
+                            while (newDeckCounter != 12)
+                            {
+                                Console.Clear();
+                                ConsoleApp.PrintCardsOptions(cardOption);
+                                string answer = Console.ReadLine();
+
+                                if (Parse.IsNumber(answer))
+                                {
+                                    Card newCard = dataset.GetACard(cardOption[int.Parse(answer) - 1]);
+                                    newDecke.cards.Add(newCard);
+                                    newDeckCounter++;
+                                    Console.Clear();
+                                    Console.WriteLine("Card added type something to continue");
+                                    Console.ReadLine();
+                                }
+                                if (answer == "")
+                                {
+                                    Console.WriteLine("What card ypu want to know about?");
+                                    answer = Console.ReadLine();
+                                    Card newCard = dataset.GetACard(cardOption[int.Parse(answer) - 1]);
+                                    Console.Clear();
+                                    ConsoleApp.PrintCard(newCard);
+                                    Console.WriteLine();
+                                    Console.WriteLine("Do you want to add that card?, type y to add it");
+                                    answer = Console.ReadLine();
+
+                                    if (answer == "y")
+                                    {
+                                        newDecke.cards.Add(newCard);
+                                        newDeckCounter++;
+                                        Console.Clear();
+                                        Console.WriteLine("Card added type something to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                            }
+                            if (newDecke.Validator())
+                            {
+                                Console.WriteLine($"Your deck have been createad susscefully, here is your deck ID: {newDecke.GetDeckID()}");
+                                dataset.deckDataSet.Add(newDecke);
+                                SerializeDeckJsonFile(dataset.deckDataSet);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Something went wrong, you didn't make a valid deck.");
+                            }
+
+                            newDeckCounter = 0;
                             break;
                     }
 
-#endregion
+                    #endregion
                     break;
 
                 case 4:
@@ -770,7 +692,22 @@ namespace War_Game
             return "n";
         }
         #endregion
+
+        public static int DeckIDGenerator(DataSet dataSet)
+        {
+            Random random = new Random();
+            int num = random.Next(0, (dataSet.deckDataSet.Count) * 10);
+
+
+            while (dataSet.IDDataSet.Contains(num))
+            {
+                num = random.Next(0, (dataSet.deckDataSet.Count) * 10);
+            }
+
+            dataSet.IDDataSet.Add(num);
+            return num;
+        }
     }
 }
 
-//decks need to hace a deck ID to make sure players dont play with the same deck
+//fix bot deck and mydeck tester

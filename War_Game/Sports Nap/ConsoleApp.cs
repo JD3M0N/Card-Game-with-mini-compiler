@@ -201,7 +201,7 @@ namespace War_Game
 
         }
 
-        static void PlayACardPrinter(Player P)
+        static void PlayACardPrinter(Player P, Player P2, int turn)
         {
             Console.Clear();
 
@@ -287,6 +287,11 @@ namespace War_Game
                     Console.WriteLine("Choose another terrain to play your card");
                     imputTerrain = int.Parse(Console.ReadLine()) - 1;
                 }
+                
+                if (ConditionResolver.ResolveCondition(Parse.GetCondition(P.CardsInHand[imputCard].Effecto.effect)))
+                {
+
+                }
                 PlayACard(P, P.CardsInHand[imputCard], imputTerrain);
             }
             else
@@ -302,6 +307,17 @@ namespace War_Game
             player.Terrains[indexTerrain].CardsPlayed.Add(cardPlayed);
             player.Terrains[indexTerrain].Conquest += cardPlayed.Conquest;
             player.CardsInHand.Remove(cardPlayed);
+        }
+
+        public static void PrintCardsOptions (List <string> cardList)
+        {
+            int cardCount = 1;
+
+            foreach (string card in cardList)
+            {
+                Console.WriteLine($"{cardCount} : {card}");
+                cardCount++;
+            }
         }
     }
 }

@@ -8,30 +8,79 @@ namespace War_Game
 {
     internal class Language
     {
-        public void DestroyACard (Player P1, int TerrainIndex, Card card)
+        public static void DestroyACard(Player P1, int TerrainIndex)
         {
-            P1.Terrains[TerrainIndex].CardsPlayed.Remove(card);
+            Random r = new Random();
+            Card cardDestroyed = P1.Terrains[TerrainIndex].CardsPlayed[r.Next(0, P1.Terrains[TerrainIndex].CardsPlayed.Count())];
+            if (P1.Terrains[TerrainIndex].CardsPlayed.Count() != 0)
+            {
+                P1.Terrains[TerrainIndex].CardsPlayed.Remove(cardDestroyed);
+            }
+
+            Console.WriteLine($"{cardDestroyed.cardName} was destroyed in terrain #{TerrainIndex}");
         }
 
-        public void MoveACard (Player p, int start, int end, Card card)
+        public static void DestroyCards(Player P1, int TerrainIndex, int cardToDestroy)
         {
-            p.Terrains[start].CardsPlayed.Remove (card);
-            p.Terrains[end].CardsPlayed.Add (card);
+            Random random = new Random();
+            int terrainCards = P1.Terrains[TerrainIndex].CardsPlayed.Count();
+            if (terrainCards <= cardToDestroy)
+            {
+                foreach (Card card in P1.Terrains[TerrainIndex].CardsPlayed)
+                {
+                    P1.Terrains[TerrainIndex].CardsPlayed.Remove(card);
+                }
+                return;
+            }
+            List <string> cardsDestroyed = new List <string>();
+            if (terrainCards > cardToDestroy)
+            {
+                for (int i = 0; i < cardToDestroy; i++)
+                {
+                    Card cardDestroyed = P1.Terrains[TerrainIndex].CardsPlayed[random.Next(0, P1.Terrains[TerrainIndex].CardsPlayed.Count())];
+                    cardsDestroyed.Add(cardDestroyed.cardName);
+                    P1.Terrains[TerrainIndex].CardsPlayed.Remove(cardDestroyed);
+                }
+
+                string cardsdetroyed = "";
+                foreach (string name in cardsDestroyed)
+                {
+                    cardsdetroyed += $" !{name}!";
+                }
+
+                Console.WriteLine($"{cardsdetroyed} were destroyed in terrain #{TerrainIndex}");
+                return;
+            }
         }
 
-        public void DiscardACard (Player p, Card card)
+        public static void MoveACard(Player p, int start, int end, Card card)
         {
-            p.CardsInHand.Remove(card);
+            p.Terrains[start].CardsPlayed.Remove(card);
+            p.Terrains[end].CardsPlayed.Add(card);
         }
 
-        public void PowerUp (Card card, int power)
+        public static void DiscardACard(Player p)
+        {
+            Random r = new Random();
+            int cardsInHand = p.CardsInHand.Count();
+            Card discarded = p.CardsInHand[r.Next(0, cardsInHand)];
+            p.CardsInHand.Remove(discarded);
+
+            Console.WriteLine($"{discarded.cardName} was descarted from {p.NickName}'s hand");
+        }
+
+        public static void PowerUp(Card card, int power)
         {
             card.Conquest += power;
+
+            Console.WriteLine($"{card.cardName} was upgraded by {power} conquest points");
         }
 
-        public void PowerDown (Card card, int power)
+        public static void PowerDown(Card card, int power)
         {
             card.Conquest -= power;
+
+            Console.WriteLine($"{card.cardName} was degraded by {power} conquest points");
         }
     }
 }

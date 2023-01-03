@@ -21,5 +21,13 @@ namespace War_Game
                 effect.Add(token);
             }
         }
+
+        public void GetValues (Player P1, Player P2, int turn, Card card)
+        {
+            foreach (Token token in effect)
+            {
+                token.GetValue(P1, P2, turn, card);
+            }
+        }
     }
 }

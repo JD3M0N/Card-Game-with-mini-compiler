@@ -10,10 +10,16 @@ namespace War_Game
     {
         public string DeckName;
         public List<Card> cards = new List<Card>();
-        static int DeckID = 0;
+        public int DeckID;
+
         public Deck()
         {
-            DeckID++;
+            Random random = new Random();
+             DeckID =  random.Next(10000, 100000000);
+        }
+        public Deck(int deckID)
+        {
+            this.DeckID = deckID;
         }
 
         public bool ValidDeck(List<Card> aDeck)

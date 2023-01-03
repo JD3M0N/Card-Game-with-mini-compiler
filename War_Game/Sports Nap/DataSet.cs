@@ -10,6 +10,7 @@ namespace War_Game
     {
         public  List <Card> cardsDataSet = new List<Card>();
         public List <Deck> deckDataSet = new List<Deck>();
+        public List <int> IDDataSet = new List<int>();
 
         public DataSet()
         {
@@ -37,6 +38,27 @@ namespace War_Game
             }
 
             throw new Exception("Deck not found");
+        }
+
+        public Deck GetDeckByID (int ID)
+        {
+            foreach (Deck deck in deckDataSet)
+            {
+                if (deck.GetDeckID() == ID)
+                {
+                    return deck;
+                }
+            }
+
+            throw new Exception("Deck not found");
+        }
+
+        public void GetDataSetID ()
+        {
+            foreach (Deck deck in deckDataSet)
+            {
+                IDDataSet.Add(deck.DeckID);
+            }
         }
     }
 }

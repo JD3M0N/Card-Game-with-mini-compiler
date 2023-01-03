@@ -246,6 +246,12 @@ namespace War_Game
                         this.value = -1;
                     }
                     break;
+                case "destroycards":
+                    {
+                        this.Type = "accion";
+                        this.value = -1;
+                    }
+                    break;
                 case "discard":
                     {
                         this.Type = "accion";
@@ -308,6 +314,31 @@ namespace War_Game
                     }
                     break;
                 case ")":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "+":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "-":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "*":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "[":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "]":
                     {
                         this.value = -1;
                     }

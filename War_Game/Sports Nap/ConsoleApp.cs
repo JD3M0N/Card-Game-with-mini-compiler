@@ -9,6 +9,8 @@ namespace War_Game
 {
     public class ConsoleApp
     {
+        public static List<string> listEffect = new List<string>();
+        #region Print Board
         public static void PrintBoard(Player one1, Player two2)
         {
             Console.Clear();
@@ -74,6 +76,10 @@ namespace War_Game
             Console.Write(two2.Energy);
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(" <= ");
+
+
+            Console.WriteLine();
+            PrintEffects(listEffect);
         }
 
         public static void PrintCard(Card card)
@@ -113,6 +119,8 @@ namespace War_Game
                 Console.Write($" {t.Description}");
                 Console.ResetColor();
             }
+
+            Console.WriteLine();
         }
 
         public static void PrintTerrain(Terrain x)
@@ -127,7 +135,7 @@ namespace War_Game
                 i++;
             }
         }
-
+        #endregion
         public static void PrintAnimation(string text, int sleepTime = 50)
         {
             foreach (char c in text)
@@ -314,11 +322,12 @@ namespace War_Game
                 Card carto = P.CardsInHand[imputCard];
                 PlayACard(P, P.CardsInHand[imputCard], imputTerrain);
                 carto.Effecto.GetValues(P, P2, turn, carto);
+                //List <string> effectList = new List<string>();
 
                 //If card condition is true, let's play it
                 if (ConditionResolver.ResolveCondition(Parse.GetCondition(carto.Effecto.effect)))
                 {
-                    ConditionResolver.EffectResolver(Parse.GetEffect(carto.Effecto.effect), P, P2, turn, carto);
+                    listEffect.Add($"{carto.cardName} : " + ConditionResolver.EffectResolver(Parse.GetEffect(carto.Effecto.effect), P, P2, turn, carto));
                 }
             }
             else
@@ -365,7 +374,28 @@ namespace War_Game
                 }
             }
         }
+
+        public static List <string> GettingEffects (List <string> effects, string effect)
+        {
+            effects.Add(effect);
+            return effects;
+        }
+
+        public static void PrintEffects (List <string> effects)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Effects in last turn");
+            Console.ResetColor();
+            foreach (string effect in effects)
+            {
+                Console.WriteLine(effect);
+            }
+
+            effects.Clear();
+        }
     }
 }
 
-// implementar la sobrecarga del metodo print a card para que printee una carta con el efecto, y asi mostrarla en la creacion de carta
+// no dejar que una carta se mueva si hay ya 4 cartas !!!!
+// hacer sobrecarga de print board sin el print effects

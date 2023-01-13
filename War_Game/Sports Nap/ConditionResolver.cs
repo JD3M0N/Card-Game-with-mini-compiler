@@ -171,7 +171,8 @@ namespace War_Game
             }
         }
 
-        public static void EffectResolver (List<Token> tokenList, Player P1, Player P2, int turn, Card card)
+        #region Effect Resolver 
+        public static string EffectResolver (List<Token> tokenList, Player P1, Player P2, int turn, Card card)
         {
             if (AritmeticsExpresions(tokenList))
             {
@@ -206,7 +207,7 @@ namespace War_Game
                     }
                 }
 
-                Language.DestroyACard(P2, terrainIndex);
+                return Language.DestroyACard(P2, terrainIndex);
             }
             if (effect == "destroycards")
             {
@@ -231,43 +232,46 @@ namespace War_Game
                     throw new Exception("Not valid effect. Espected a number of cards to destroy");
                 }
 
-                Language.DestroyCards(P2, terrainIndex, cardsToDestroy);
+                return Language.DestroyCards(P2, terrainIndex, cardsToDestroy);
             }
             if (effect == "discard")
             {
-                Language.DiscardACard(P2);
+                return Language.DiscardACard(P2);
             }
             if (effect == "powerup")
             {
-                Language.PowerUp(card, tokenList[1].value, P1.Terrains[CardPLayed(card, P1)]);
+                return Language.PowerUp(card, tokenList[1].value, P1.Terrains[CardPLayed(card, P1)]);
             }
             if (effect == "powerdown")
             {
-                Language.PowerDown(card, tokenList[1].value, P1.Terrains[CardPLayed(card, P1)]);
+                return Language.PowerDown(card, tokenList[1].value, P1.Terrains[CardPLayed(card, P1)]);
             }
             if (effect == "empty")
             {
-                Language.Empty();
+                return Language.Empty();
             }
             if (effect == "move.right")
             {
                 if (CardPLayed(card, P1) != 2)
                 {
-                    Language.MoveACard(P1, CardPLayed(card, P1), (CardPLayed(card, P1) + 1), card);
+                    return Language.MoveACard(P1, CardPLayed(card, P1), (CardPLayed(card, P1) + 1), card);
                 }
             }
             if (effect == "move.left")
             {
                 if (CardPLayed(card, P1) != 0)
                 {
-                    Language.MoveACard(P1, CardPLayed(card, P1), (CardPLayed(card, P1) - 1), card);
+                    return Language.MoveACard(P1, CardPLayed(card, P1), (CardPLayed(card, P1) - 1), card);
                 }
             }
             if (effect == "move.center")
             {
-                Language.MoveACard(P1, CardPLayed(card, P1), 1, card);
+                return Language.MoveACard(P1, CardPLayed(card, P1), 1, card);
             }
+
+            return "Empty effect";
         }
+        #endregion
 
         #region Shunting Yard
         public static Token Shunting_Yard(List<Token> tokenlist)
@@ -402,6 +406,4 @@ namespace War_Game
     }
 }
 
-// Debug Method
-//if por cada uno de los effectos
 // destruir cartas por terreno

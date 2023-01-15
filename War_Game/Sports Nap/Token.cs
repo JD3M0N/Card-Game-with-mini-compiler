@@ -13,6 +13,10 @@ namespace War_Game
         public int value = -1;
         public string nameValue = "";
 
+        public Token()
+        {
+
+        }
 
         public Token(string type, string description)
         {
@@ -72,12 +76,26 @@ namespace War_Game
                     break;
                 case "terrain.opponent.cardsamount":
                     {
-                        //fix
+                        this.Type = "number";
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (P1.Terrains[i].CardsPlayed.Contains (card))
+                            {
+                                this.value = P2.Terrains[i].CardsPlayed.Count();
+                            }
+                        }
                     }
                     break;
                 case "terrain.opponent.conquest":
                     {
-                        //fix
+                        this.Type = "number";
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (P1.Terrains[i].CardsPlayed.Contains(card))
+                            {
+                                this.value = P2.Terrains[i].Conquest;
+                            }
+                        }
                     }
                     break;
                 case "topterrain.name":
@@ -242,6 +260,12 @@ namespace War_Game
                         this.value = -1;
                     }
                     break;
+                case "destroycards":
+                    {
+                        this.Type = "accion";
+                        this.value = -1;
+                    }
+                    break;
                 case "discard":
                     {
                         this.Type = "accion";
@@ -304,6 +328,31 @@ namespace War_Game
                     }
                     break;
                 case ")":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "+":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "-":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "*":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "[":
+                    {
+                        this.value = -1;
+                    }
+                    break;
+                case "]":
                     {
                         this.value = -1;
                     }

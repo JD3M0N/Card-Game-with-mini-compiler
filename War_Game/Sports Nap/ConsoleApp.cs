@@ -91,6 +91,30 @@ namespace War_Game
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
+        public static void PrintCard(Card card, bool boolean)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(card.cardName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy Cost: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(card.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Conquest Power: ");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write(card.Conquest);
+            Console.ForegroundColor = ConsoleColor.Gray;
+
+            Console.WriteLine();
+            Console.Write("Effect: ");
+            foreach (Token t in card.Effecto.effect)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($" {t.Description}");
+                Console.ResetColor();
+            }
+        }
+
         public static void PrintTerrain(Terrain x)
         {
             int i = 1;
@@ -126,7 +150,7 @@ namespace War_Game
             }
         }
 
-        public static void ItsYourTurn(Player P, Player X)
+        public static void ItsYourTurn(Player P, Player X, int turn)
         {
 
             string newPrompt = "It's ur turn " + P.NickName + "\n What whould you want to do?";
@@ -142,7 +166,7 @@ namespace War_Game
                         string finish = "";
                         while (finish != "y")
                         {
-                            PlayACardPrinter(P);
+                            PlayACardPrinter(P, X, turn);
                             Console.WriteLine("Are u finish?");
                             Console.WriteLine("Write 'y' for finish and 'n' to play another card.");
                             finish = Console.ReadLine();
@@ -201,7 +225,7 @@ namespace War_Game
 
         }
 
-        static void PlayACardPrinter(Player P)
+        static void PlayACardPrinter(Player P, Player P2, int turn)
         {
             Console.Clear();
 
@@ -238,7 +262,7 @@ namespace War_Game
                     try
                     {
                         Console.WriteLine("Write the number of the card that u want to play: ");
-                        imputCard = int.Parse(Console.ReadLine()) - 1;  
+                        imputCard = int.Parse(Console.ReadLine()) - 1;
                         flag = true;
                         catchFlag = true;
                     }
@@ -262,7 +286,22 @@ namespace War_Game
             if (Card.CardCanBePlayed(P, P.CardsInHand[imputCard]))
             {
                 Console.WriteLine("Write in what terrain u want to play?: ");
-                imputTerrain = int.Parse(Console.ReadLine()) - 1;
+                bool catchFlag = true;
+                while (catchFlag)
+                {
+                    try
+                    {
+                        catchFlag = false;
+                        imputTerrain = int.Parse(Console.ReadLine()) - 1; 
+                    }
+                    catch (System.FormatException ex)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That's no moon ;)");
+                        Console.ResetColor();
+                        catchFlag = true;
+                    }
+                }
 
                 while (!Terrain.TerrainHaveSpace(P.Terrains[imputTerrain]))
                 {
@@ -272,11 +311,21 @@ namespace War_Game
                     Console.WriteLine("Choose another terrain to play your card");
                     imputTerrain = int.Parse(Console.ReadLine()) - 1;
                 }
+                Card carto = P.CardsInHand[imputCard];
                 PlayACard(P, P.CardsInHand[imputCard], imputTerrain);
+                carto.Effecto.GetValues(P, P2, turn, carto);
+
+                //If card condition is true, let's play it
+                if (ConditionResolver.ResolveCondition(Parse.GetCondition(carto.Effecto.effect)))
+                {
+                    ConditionResolver.EffectResolver(Parse.GetEffect(carto.Effecto.effect), P, P2, turn, carto);
+                }
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You don`t have enough Energy to play this card");
+                Console.ResetColor();
             }
         }
         public static void PlayACard(Player player, Card cardPlayed, int indexTerrain)
@@ -286,5 +335,37 @@ namespace War_Game
             player.Terrains[indexTerrain].Conquest += cardPlayed.Conquest;
             player.CardsInHand.Remove(cardPlayed);
         }
+
+        public static void PrintCardsOptions (List <string> cardList)
+        {
+            int cardCount = 1;
+
+            foreach (string card in cardList)
+            {
+                Console.WriteLine($"{cardCount} : {card}");
+                cardCount++;
+            }
+        }
+
+        public static void UpdateConquest (Player p1, Player p2)
+        {
+            
+            for (int i = 0; i < 3; i++)
+            {
+                p1.Terrains[i].Conquest = 0;
+                p2.Terrains[i].Conquest = 0;
+
+                foreach (Card card in p1.Terrains[i].CardsPlayed)
+                {
+                    p1.Terrains[i].Conquest += card.Conquest;
+                }
+                foreach (Card card in p2.Terrains[i].CardsPlayed)
+                {
+                    p2.Terrains[i].Conquest += card.Conquest;
+                }
+            }
+        }
     }
 }
+
+// implementar la sobrecarga del metodo print a card para que printee una carta con el efecto, y asi mostrarla en la creacion de carta

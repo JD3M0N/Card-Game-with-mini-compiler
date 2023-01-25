@@ -9,33 +9,39 @@ namespace War_Game
 {
     public class ConsoleApp
     {
+        public static List<string> listEffect = new List<string>();
+        #region Print Board
         public static void PrintBoard(Player one1, Player two2)
         {
             Console.Clear();
-            int i = 1;
-            Console.WriteLine("Player 1: " + one1.NickName + " ENERGY => " + one1.Energy + " <= ");
+            Console.Write("Player 1: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(one1.NickName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy => ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(one1.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(" <= ");
+
+            Console.WriteLine("========================================================");
             Console.WriteLine("========================================================");
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-            foreach (Card card in one1.CardsInHand)
-            {
-                Console.Write("#" + i + ":");
-                PrintCard(card);
-                Console.Write("  ||  ");
-                Console.WriteLine();
-                i++;
-            }
-            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-            Console.WriteLine("========================================================");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("========================================================");
             for (int j = 0; j < 3; j++)
             {
                 Console.WriteLine($"==>>TERRAIN{j+1}<<==");
                 Console.WriteLine("========================================================");
+                Console.ForegroundColor = ConsoleColor.Gray;
 
-                Console.WriteLine(one1.NickName + " => Conquest: " + one1.Terrains[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(one1.NickName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write(" => Conquest: ");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine(one1.Terrains[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
                 PrintTerrain(one1.Terrains[j]);
 
@@ -43,36 +49,78 @@ namespace War_Game
                 Console.WriteLine("--------------------------------------------------------");
                 Console.WriteLine();
 
-                Console.WriteLine(two2.NickName + " => Conquest: " + two2.Terrains[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write(two2.NickName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write(" => Conquest: ");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine(two2.PublicTerrain[j].Conquest);
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
-                PrintTerrain(two2.Terrains[j]);
+                PrintTerrain(two2.PublicTerrain[j]);
 
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("========================================================");
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("========================================================");
-            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-
-            i = 1;
-            foreach (Card card in two2.CardsInHand)
-            {
-                Console.Write("#" + i + ":");
-                PrintCard(card);
-                Console.Write("  ||  ");
-                Console.WriteLine();
-                i++;
-            }
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             Console.WriteLine("========================================================");
+            Console.WriteLine("========================================================");
 
-            Console.WriteLine("Player 2: " + two2.NickName  + " ENERGY => " + two2.Energy + " <= ");
+            Console.Write("Player 2: ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write(two2.NickName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy => ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(two2.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(" <= ");
+
+
+            Console.WriteLine();
+            PrintEffects(listEffect);
         }
 
         public static void PrintCard(Card card)
         {
-            Console.Write("Name: " + card.cardName + " Energy Cost: " + card.Energy + " Conquest Power: " + card.Conquest);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(card.cardName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy Cost: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(card.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Conquest Power: ");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write(card.Conquest);
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
+        public static void PrintCard(Card card, bool boolean)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(card.cardName);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Energy Cost: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(card.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(" Conquest Power: ");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write(card.Conquest);
+            Console.ForegroundColor = ConsoleColor.Gray;
+
+            Console.WriteLine();
+            Console.Write("Effect: ");
+            foreach (Token t in card.Effecto.effect)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($" {t.Description}");
+                Console.ResetColor();
+            }
+
+            Console.WriteLine();
         }
 
         public static void PrintTerrain(Terrain x)
@@ -81,13 +129,13 @@ namespace War_Game
 
             foreach (Card card in x.CardsPlayed)
             {
-                Console.Write(i + " :");
+                Console.Write(i + ": ");
                 PrintCard(card);
                 Console.WriteLine();
                 i++;
             }
         }
-
+        #endregion
         public static void PrintAnimation(string text, int sleepTime = 50)
         {
             foreach (char c in text)
@@ -110,7 +158,7 @@ namespace War_Game
             }
         }
 
-        public static void ItsYourTurn(Player P, Player X)
+        public static void ItsYourTurn(Player P, Player X, int turn)
         {
 
             string newPrompt = "It's ur turn " + P.NickName + "\n What whould you want to do?";
@@ -121,19 +169,60 @@ namespace War_Game
             switch (selectedPlayIndex)
             {
                 case 0:
-                    string finish = "";
-                    while (finish != "y")
+                    if (P.CardsInHand.Count > 0 && P.Energy > 0)
                     {
-                        PlayACardPrinter(P);
-                        Console.WriteLine("Are u finish?");
-                        Console.WriteLine("Write 'y' for finish and 'n' to play another card.");
-                        finish = Console.ReadLine();
+                        string finish = "";
+                        while (finish != "y")
+                        {
+                            PlayACardPrinter(P, X, turn);
+                            Console.WriteLine("Are u finish?");
+                            Console.WriteLine("Write 'y' for finish and 'n' to play another card.");
+                            finish = Console.ReadLine();
+                        }
+                        Console.Clear();
+                        break;
                     }
-                    Console.Clear();
+                    else
+                    {
+                        if (P.CardsInHand.Count == 0)
+                        {
+                            string WhatToDo = "";
+                            Console.WriteLine("You don't have any card to play");
+                            Console.WriteLine("Write 'et' to end turn or press any key to go back");
+                            WhatToDo = Console.ReadLine();
+
+                            if (WhatToDo == "et")
+                            {
+                                P.EndTurn = true;
+                                break;
+                            }
+                            break;
+                        }
+                        if (P.Energy == 0)
+                        {
+                            string WhatToDo = "";
+                            Console.WriteLine("You don't have enough energy to play a card");
+                            Console.WriteLine("Write 'et' to end turn or press any key to go back");
+                            WhatToDo = Console.ReadLine();
+
+                            if (WhatToDo == "et")
+                            {
+                                P.EndTurn = true;
+                                break;
+                            }
+                            break;
+                        }
+                    }
                     break;
 
                 case 1:
-                    PrintBoard(P, X);
+                    string GoBack = "";
+                    while (GoBack != "gb")
+                    {
+                        PrintBoard(P, X);
+                        Console.WriteLine("If you want to go back write 'gb'.");
+                        GoBack = Console.ReadLine();
+                    }
                     break;
 
                 case 2:
@@ -144,7 +233,7 @@ namespace War_Game
 
         }
 
-        static void PlayACardPrinter(Player P)
+        static void PlayACardPrinter(Player P, Player P2, int turn)
         {
             Console.Clear();
 
@@ -161,24 +250,152 @@ namespace War_Game
             }
 
             Console.WriteLine();
+            Console.Write("Player Energy: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(P.Energy);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
 
             int imputTerrain = 0;
             int imputCard = 0;
-            Console.WriteLine("Write the number of the card that u want to play: ");
-            imputCard = int.Parse(Console.ReadLine()) - 1;
-            Console.WriteLine("Write in what terrain u want to play?: ");
-            imputTerrain= int.Parse(Console.ReadLine()) - 1;
+            bool flag = false;
+            while (!flag)
+            {
+                bool catchFlag = false;
 
-            PlayACard(P, P.CardsInHand[imputCard], imputTerrain);
+                while (!catchFlag)
+                {
+                    try
+                    {
+                        Console.WriteLine("Write the number of the card that u want to play: ");
+                        imputCard = int.Parse(Console.ReadLine()) - 1;
+                        flag = true;
+                        catchFlag = true;
+                    }
+                    catch (System.FormatException ex)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That's no moon ;)");
+                        Console.ResetColor();
+                        catchFlag = false;
+                    }
+                }
+                if (imputCard <= -1 || imputCard > P.CardsInHand.Count() - 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Sorry, that number isn't valid, try again");
+                    Console.ResetColor();
+                    flag = false;
+                }
+            }
+
+            if (Card.CardCanBePlayed(P, P.CardsInHand[imputCard]))
+            {
+                Console.WriteLine("Write in what terrain u want to play?: ");
+                bool catchFlag = true;
+                while (catchFlag)
+                {
+                    try
+                    {
+                        catchFlag = false;
+                        imputTerrain = int.Parse(Console.ReadLine()) - 1; 
+                    }
+                    catch (System.FormatException ex)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That's no moon ;)");
+                        Console.ResetColor();
+                        catchFlag = true;
+                    }
+                }
+
+                while (!Terrain.TerrainHaveSpace(P.Terrains[imputTerrain]))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("You have already played 4 cards in Terrain #" + (imputTerrain + 1));
+                    Console.ResetColor();
+                    Console.WriteLine("Choose another terrain to play your card");
+                    imputTerrain = int.Parse(Console.ReadLine()) - 1;
+                }
+                Card carto = P.CardsInHand[imputCard];
+                PlayACard(P, P.CardsInHand[imputCard], imputTerrain);
+                carto.Effecto.GetValues(P, P2, turn, carto);
+                //List <string> effectList = new List<string>();
+
+                //If card condition is true, let's play it
+                if (ConditionResolver.ResolveCondition(Parse.GetCondition(carto.Effecto.effect)))
+                {
+                    listEffect.Add($"{carto.cardName} : " + ConditionResolver.EffectResolver(Parse.GetEffect(carto.Effecto.effect), P, P2, turn, carto));
+                }
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You don`t have enough Energy to play this card");
+                Console.ResetColor();
+            }
         }
         public static void PlayACard(Player player, Card cardPlayed, int indexTerrain)
         {
+            player.Energy -= cardPlayed.Energy;
             player.Terrains[indexTerrain].CardsPlayed.Add(cardPlayed);
             player.Terrains[indexTerrain].Conquest += cardPlayed.Conquest;
             player.CardsInHand.Remove(cardPlayed);
-            player.Energy = player.Energy - cardPlayed.Energy;
+        }
+
+        public static void PrintCardsOptions (List <string> cardList)
+        {
+            int cardCount = 1;
+
+            foreach (string card in cardList)
+            {
+                Console.WriteLine($"{cardCount} : {card}");
+                cardCount++;
+            }
+        }
+
+        public static void UpdateConquest (Player p1, Player p2)
+        {
+            
+            for (int i = 0; i < 3; i++)
+            {
+                p1.Terrains[i].Conquest = 0;
+                p2.Terrains[i].Conquest = 0;
+
+                foreach (Card card in p1.Terrains[i].CardsPlayed)
+                {
+                    p1.Terrains[i].Conquest += card.Conquest;
+                }
+                foreach (Card card in p2.Terrains[i].CardsPlayed)
+                {
+                    p2.Terrains[i].Conquest += card.Conquest;
+                }
+            }
+        }
+
+        public static List <string> GettingEffects (List <string> effects, string effect)
+        {
+            effects.Add(effect);
+            return effects;
+        }
+
+        public static void PrintEffects (List <string> effects)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Effects in last turn");
+            Console.ResetColor();
+            foreach (string effect in effects)
+            {
+                Console.WriteLine(effect);
+            }
+
+            effects.Clear();
         }
     }
 }
+
+// no dejar que una carta se mueva si hay ya 4 cartas !!!!
+// hacer sobrecarga de print board sin el print effects

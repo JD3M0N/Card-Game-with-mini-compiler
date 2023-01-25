@@ -14,6 +14,7 @@ namespace War_Game
         public int Energy;
         public bool EndTurn = false;
         public Terrain [] Terrains = new Terrain [3];
+        public Terrain [] PublicTerrain = new Terrain [3];
 
         public Player ()
         {
@@ -29,12 +30,8 @@ namespace War_Game
 
             for (int i = 0; i < 3; i++)
             {
-                DrawACard();
-            }
-            
-            for (int i = 0; i < 3; i++)
-            {
                 Terrains[i] = new Terrain();
+                PublicTerrain[i] = new Terrain();
             }
         }
         public string nickName
@@ -60,6 +57,19 @@ namespace War_Game
             PlayerDeck.cards.Remove(PlayerDeck.cards.Last());
         }
 
+        public void UpdatePublicTerrain ()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                PublicTerrain[i].Conquest = Terrains[i].Conquest;
+                PublicTerrain[i].CardsPlayed.Clear();
+
+                foreach(Card c in Terrains[i].CardsPlayed)
+                {
+                    PublicTerrain[i].CardsPlayed.Add(c);
+                }
+            }
+        }
     }
 }
 

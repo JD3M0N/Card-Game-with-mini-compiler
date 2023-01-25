@@ -8,6 +8,7 @@ namespace War_Game
 {
     public class Terrain
     {
+        public string Name = "";
         public int Conquest = 0;
         private List<Card> cardsPlayed = new List<Card>(); 
         //public Effect Effecto; 
@@ -33,6 +34,15 @@ namespace War_Game
                     cardsPlayed = value;
                 }
             }
+        }
+
+        public static bool TerrainHaveSpace(Terrain t)
+        {
+            if(t.CardsPlayed.Count < 4)
+            {
+                return true;
+            }
+            return false;
         }
 
         // crear terreno solo con nombre y efecto

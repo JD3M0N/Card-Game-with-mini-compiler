@@ -25,5 +25,14 @@ namespace War_Game
             Conquest = aConquest;
             Effecto = aEffect;
         }
+
+        public static bool CardCanBePlayed(Player p, Card c)
+        {
+            if(p.Energy < c.Energy)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

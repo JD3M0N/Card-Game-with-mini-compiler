@@ -34,3 +34,15 @@ E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Ga
 E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\refint\War_Game.dll
 E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.pdb
 E:\Programming\GitDesktop\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\ref\War_Game.dll
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.deps.json
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.dll
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\ref\War_Game.dll
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\bin\Debug\net6.0\War_Game.pdb
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.csproj.AssemblyReference.cache
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.AssemblyInfoInputs.cache
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.AssemblyInfo.cs
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.dll
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\ref\War_Game.dll
+C:\Users\Gabriel\Documents\GitHub\God-s_Snap\War_Game\Sports Nap\obj\Debug\net6.0\War_Game.pdb

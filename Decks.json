@@ -2271,5 +2271,223 @@
       }
     ],
     "DeckID": 44
+  },
+  {
+    "DeckName": "asd",
+    "cards": [
+      {
+        "cardName": "Tony",
+        "Energy": 0,
+        "Conquest": 0,
+        "Effecto": {
+          "effect": [
+            {
+              "Type": "boolean",
+              "Description": "true",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": ":",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "value",
+              "Description": "powerup",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": "[",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "number",
+              "Description": "1",
+              "value": 1,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": "+",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": "(",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "number",
+              "Description": "2",
+              "value": 2,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": "*",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "number",
+              "Description": "3",
+              "value": 3,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": ")",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": "+",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "number",
+              "Description": "13",
+              "value": 13,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": "]",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "symbol",
+              "Description": ";",
+              "value": -1,
+              "nameValue": ""
+            }
+          ]
+        }
+      },
+      {
+        "cardName": "Hestia",
+        "Energy": 3,
+        "Conquest": 3,
+        "Effecto": {
+          "effect": [
+            {
+              "Type": "boolean",
+              "Description": "true",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "keyword",
+              "Description": ":",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "value",
+              "Description": "empty",
+              "value": -1,
+              "nameValue": ""
+            },
+            {
+              "Type": "keyword",
+              "Description": ";",
+              "value": -1,
+              "nameValue": ""
+            }
+          ]
+        }
+      },
+      {
+        "cardName": "Atenea",
+        "Energy": 4,
+        "Conquest": 5,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Ares",
+        "Energy": 6,
+        "Conquest": 12,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Hefesto",
+        "Energy": 4,
+        "Conquest": 5,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Afrodita",
+        "Energy": 3,
+        "Conquest": 3,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Artemisa",
+        "Energy": 1,
+        "Conquest": 1,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Poseidon",
+        "Energy": 4,
+        "Conquest": 6,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Apolo",
+        "Energy": 2,
+        "Conquest": 2,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Zeus",
+        "Energy": 5,
+        "Conquest": 9,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Hermes",
+        "Energy": 1,
+        "Conquest": 2,
+        "Effecto": {
+          "effect": []
+        }
+      },
+      {
+        "cardName": "Hera",
+        "Energy": 3,
+        "Conquest": 4,
+        "Effecto": {
+          "effect": []
+        }
+      }
+    ],
+    "DeckID": 39
   }
 ]

@@ -29,10 +29,10 @@ namespace War_Game
             dataset.GetDataSetID();
             #endregion
 
-            SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
-            typingSound.Load();
-            SoundPlayer backgroundMusic = new SoundPlayer("Pirates of the Caribbean theme.wav");
-            backgroundMusic.Load();
+            //SoundPlayer typingSound = new SoundPlayer("typewriter-2.wav");
+            //typingSound.Load();
+            //SoundPlayer backgroundMusic = new SoundPlayer("Pirates of the Caribbean theme.wav");
+            //backgroundMusic.Load();
 
             #region FirstMenuOption
 
@@ -72,10 +72,10 @@ namespace War_Game
                         case 0:
                             Console.Clear();
 
-                            typingSound.PlayLooping();
+                            //typingSound.PlayLooping();
                             ConsoleApp.PrintAnimation("Insert nick name Player 1: ", 50);
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
-                            typingSound.Stop();
+                            //typingSound.Stop();
                             string nickNamePlayer1 = Console.ReadLine();
 
                             Console.WriteLine($"Now {nickNamePlayer1} insert your deck ID");
@@ -97,10 +97,10 @@ namespace War_Game
                             Player P1 = new Player(nickNamePlayer1, P1Deck);
                             Console.Clear();
 
-                            typingSound.PlayLooping();
+                            //typingSound.PlayLooping();
                             ConsoleApp.PrintAnimation("Insert nick name Player 2: ", 50);
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
-                            typingSound.Stop();
+                            //typingSound.Stop();
                             string nickNamePlayer2 = Console.ReadLine();
 
                             Console.WriteLine($"Now {nickNamePlayer2} insert your deck ID");
@@ -134,7 +134,7 @@ namespace War_Game
 
                             while (turn <= 6)
                             {
-                                backgroundMusic.PlayLooping();
+                                //backgroundMusic.PlayLooping();
 
                                 P1.Energy = turn;
                                 P2.Energy = turn;
@@ -169,7 +169,7 @@ namespace War_Game
                                 turn++;
                             }
 
-                            backgroundMusic.Stop();
+                            //backgroundMusic.Stop();
                             Console.Clear();
                             Console.WriteLine(@"
 
@@ -194,10 +194,10 @@ namespace War_Game
                             Bot_easy DiazcaBot = new Bot_easy("DiazcaBot", dataset.GetADeck("BotDeck"));
                             DiazcaBot.PlayerDeck.Shuffled();
 
-                            typingSound.PlayLooping();
+                            //typingSound.PlayLooping();
                             ConsoleApp.PrintAnimation("Insert nick name Player : ", 50);
                             ConsoleApp.PrintAnimation("(no more than 12 characters)", 50);
-                            typingSound.Stop();
+                            //typingSound.Stop();
                             nickNamePlayer1 = Console.ReadLine();
                             Console.WriteLine($" {nickNamePlayer1} Imput your deck ID:");
                             int deckID = int.Parse(Console.ReadLine());
@@ -215,7 +215,7 @@ namespace War_Game
 
                             Card tempCard = new Card();
 
-                            backgroundMusic.PlayLooping();
+                            //backgroundMusic.PlayLooping();
 
                             while (turn <= 6)
                             {
@@ -260,7 +260,7 @@ namespace War_Game
                                 turn++;
                             }
 
-                            backgroundMusic.Stop();
+                            //backgroundMusic.Stop();
 
                             Console.Clear();
                             Console.WriteLine(@"

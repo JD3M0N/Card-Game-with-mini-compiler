@@ -1363,5 +1363,155 @@
         }
       ]
     }
+  },
+  {
+    "cardName": "Carta",
+    "Energy": 4,
+    "Conquest": 6,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "value",
+          "Description": "opponent.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "greaterthan",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "player.cardsinhand",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "4",
+          "value": 4,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
+  },
+  {
+    "cardName": "Tony",
+    "Energy": 0,
+    "Conquest": 0,
+    "Effecto": {
+      "effect": [
+        {
+          "Type": "boolean",
+          "Description": "true",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ":",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "value",
+          "Description": "powerup",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "[",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "1",
+          "value": 1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "+",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "(",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "2",
+          "value": 2,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "*",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "3",
+          "value": 3,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ")",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "+",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "number",
+          "Description": "13",
+          "value": 13,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": "]",
+          "value": -1,
+          "nameValue": ""
+        },
+        {
+          "Type": "symbol",
+          "Description": ";",
+          "value": -1,
+          "nameValue": ""
+        }
+      ]
+    }
   }
 ]
